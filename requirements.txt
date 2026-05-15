@@ -1,0 +1,20 @@
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+py2neo==2021.2.4
+websockets==14.1
+shapely==2.0.6
+numpy==2.2.1
+pydantic==2.10.4
+
+# Data ingest / preprocessing
+pyshp==2.3.1
+pyproj==3.7.0
+openpyxl==3.1.5
+pandas==2.2.3
+
+# Plotting (used by reproducibility scripts)
+matplotlib==3.10.0
+
+# Optional: required only if you replace backend/geokg/gsid.py with the
+# production KAIST CRC GSID v7.0 implementation that uses S2 cells.
+# s2sphere==0.2.5

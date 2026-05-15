@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>FRONTS_ROAD Visual Validation</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #1a1a1a; color: #e0e0e0; }
+.header { padding: 12px 20px; background: #232323; border-bottom: 1px solid #444; display: flex; align-items: center; gap: 20px; }
+.sample-info { padding: 12px 20px; background: #2a2a2a; border-bottom: 1px solid #444; line-height: 1.6; }
+.sample-info .verdict-OK_NEAREST_AND_CLOSE { color: #6bd16b; font-weight: bold; }
+.sample-info .verdict-OK_NOT_NEAREST_BUT_CLOSE { color: #f0c060; font-weight: bold; }
+.sample-info .verdict-FAIL_NOT_NEAREST_AND_FAR { color: #ff6b6b; font-weight: bold; }
+.controls { padding: 12px 20px; background: #2a2a2a; border-bottom: 1px solid #444; display: flex; gap: 8px; flex-wrap: wrap; }
+.controls button { background: #3a4d62; color: white; border: 1px solid #506b8a; padding: 6px 14px; cursor: pointer; border-radius: 4px; }
+.controls button:hover { background: #4a5d72; }
+.controls button.label-correct { background: #2d6b2d; }
+.controls button.label-incorrect { background: #6b2d2d; }
+.controls button.label-borderline { background: #5d5d2d; }
+.maps { display: flex; gap: 4px; height: calc(100vh - 220px); }
+.map-frame { flex: 1; border: 0; }
+#leaflet-map { width: 100%; height: 100%; }
+.legend { background: rgba(35,35,35,0.9); padding: 8px 12px; border-radius: 4px; font-size: 12px; line-height: 1.6; }
+.legend .swatch { display: inline-block; width: 14px; height: 14px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+.summary-panel { padding: 8px 20px; background: #2a2a2a; border-top: 1px solid #444; font-size: 13px; }
+.kbd { background: #444; padding: 1px 6px; border-radius: 3px; font-family: monospace; }
+a { color: #6ba6e6; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h2 style="margin:0">FRONTS_ROAD Visual Validation</h2>
+  <span id="sample-counter">— / —</span>
+  <span style="margin-left:auto"><span class="kbd">←</span>/<span class="kbd">→</span> navigate · <span class="kbd">1</span> correct · <span class="kbd">0</span> incorrect · <span class="kbd">?</span> borderline</span>
+</div>
+
+<div class="sample-info" id="sample-info">Loading...</div>
+
+<div class="controls">
+  <button onclick="prev()">◀ Prev</button>
+  <button class="label-correct" onclick="setLabel(1)">1 — Correct (build front faces this road)</button>
+  <button class="label-incorrect" onclick="setLabel(0)">0 — Incorrect</button>
+  <button class="label-borderline" onclick="setLabel('?')">? — Borderline</button>
+  <button onclick="next()">Next ▶</button>
+  <button onclick="exportLabels()" style="margin-left:auto;background:#5d2d2d">Export Labels</button>
+  <button onclick="copyKakaoLink()">Copy KakaoMap Link</button>
+</div>
+
+<div class="maps">
+  <div id="leaflet-map"></div>
+</div>
+
+<div class="summary-panel" id="summary">No samples loaded.</div>
+
+<script>
+let samples = [];
+let idx = 0;
+const labels = {};
+let map, layerGroup;
+
+async function loadSamples() {
+  const res = await fetch('/api/scene/visual_validation_samples');
+  samples = await res.json();
+  document.getElementById('summary').textContent =
+    `Loaded ${samples.length} samples · OK_NEAREST: ${samples.filter(s=>s.verdict==='OK_NEAREST_AND_CLOSE').length} · OK_CLOSE: ${samples.filter(s=>s.verdict==='OK_NOT_NEAREST_BUT_CLOSE').length} · FAIL: ${samples.filter(s=>s.verdict==='FAIL_NOT_NEAREST_AND_FAR').length}`;
+  initMap();
+  render();
+}
+
+function initMap() {
+  map = L.map('leaflet-map').setView([36.37, 127.34], 17);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+  }).addTo(map);
+  layerGroup = L.layerGroup().addTo(map);
+  // Legend
+  const legend = L.control({ position: 'bottomright' });
+  legend.onAdd = () => {
+    const div = L.DomUtil.create('div', 'legend');
+    div.innerHTML = `
+      <span class="swatch" style="background:#0a8a00"></span>Building (centroid)<br>
+      <span class="swatch" style="background:#3478ff"></span>Assigned FRONTS_ROAD<br>
+      <span class="swatch" style="background:#ff8c1a"></span>Top-1 polyline-nearest<br>
+    `;
+    return div;
+  };
+  legend.addTo(map);
+}
+
+async function fetchRoadPolyline(uid) {
+  try {
+    const res = await fetch(`/api/geokg/nodes/${encodeURIComponent(uid)}`);
+    if (!res.ok) return null;
+    const node = await res.json();
+    // The endpoint returns flat keys including a `coordinates` JSON string
+    let coords = node.coordinates;
+    if (coords === undefined && node.properties) coords = node.properties.coordinates;
+    if (typeof coords === 'string') coords = JSON.parse(coords);
+    return Array.isArray(coords) ? coords : null;
+  } catch (e) {
+    console.error('fetchRoadPolyline error', uid, e);
+    return null;
+  }
+}
+
+async function render() {
+  if (!samples.length) return;
+  const s = samples[idx];
+  document.getElementById('sample-counter').textContent = `${idx + 1} / ${samples.length}`;
+  document.title = `[${idx + 1}/${samples.length}] ${s.assigned_road_name} — ${s.verdict}`;
+
+  const lbl = labels[s.src_uid];
+  const lblBadge = lbl !== undefined ? `<strong>Label: ${lbl === 1 ? '✓ correct' : lbl === 0 ? '✗ incorrect' : '? borderline'}</strong>` : '<em style="color:#888">unlabeled</em>';
+
+  document.getElementById('sample-info').innerHTML = `
+    <strong>Building</strong> ${s.src_uid}
+    <span style="color:#9b9b9b">@ (${s.b_lon.toFixed(5)}, ${s.b_lat.toFixed(5)})</span>
+    ${s.b_addr ? `<br><strong>Address:</strong> ${s.b_addr}` : ''}
+    <br>
+    <strong>Assigned road (FRONTS_ROAD):</strong> <span style="color:#7bb6ff">${s.assigned_road_name}</span>
+      <span style="color:#999">(polyline distance: ${s.polyline_dist_m}m)</span>
+    <br>
+    <strong>Top-1 polyline-nearest:</strong> <span style="color:#ffb27b">${s.top1_road_name}</span>
+      <span style="color:#999">(distance: ${s.top1_dist_m}m)</span>
+    <br>
+    <strong>Verdict (algorithmic):</strong> <span class="verdict-${s.verdict}">${s.verdict}</span>
+    · ${lblBadge}
+  `;
+
+  // Render the map
+  layerGroup.clearLayers();
+
+  // Building marker (green)
+  L.circleMarker([s.b_lat, s.b_lon], {
+    radius: 9, color: '#0a8a00', fillColor: '#3fdd3f', fillOpacity: 0.9, weight: 3
+  }).addTo(layerGroup).bindPopup(`<b>Building</b><br>${s.src_uid}<br>${s.b_addr || ''}`);
+
+  // Assigned road polyline (blue)
+  const assignedCoords = await fetchRoadPolyline(s.assigned_road_uid);
+  if (assignedCoords) {
+    const latlngs = assignedCoords.map(c => [c[1], c[0]]);
+    L.polyline(latlngs, { color: '#3478ff', weight: 5, opacity: 0.9 }).addTo(layerGroup)
+      .bindPopup(`<b>Assigned: ${s.assigned_road_name}</b><br>polyline dist: ${s.polyline_dist_m}m`);
+  }
+
+  // Top-1 polyline road (orange) — only if different from assigned
+  if (s.top1_road_uid && s.top1_road_uid !== s.assigned_road_uid) {
+    const topCoords = await fetchRoadPolyline(s.top1_road_uid);
+    if (topCoords) {
+      const latlngs = topCoords.map(c => [c[1], c[0]]);
+      L.polyline(latlngs, { color: '#ff8c1a', weight: 4, opacity: 0.85, dashArray: '6,4' }).addTo(layerGroup)
+        .bindPopup(`<b>Top-1 polyline-nearest: ${s.top1_road_name}</b><br>dist: ${s.top1_dist_m}m`);
+    }
+  }
+
+  // Center map on building, zoom 17 (about 100m visible)
+  map.setView([s.b_lat, s.b_lon], 17);
+}
+
+function next() { idx = Math.min(samples.length - 1, idx + 1); render(); }
+function prev() { idx = Math.max(0, idx - 1); render(); }
+function setLabel(v) {
+  if (!samples.length) return;
+  labels[samples[idx].src_uid] = v;
+  render();
+  if (idx < samples.length - 1) setTimeout(next, 200);
+}
+function exportLabels() {
+  const csv = ['src_uid,verdict,polyline_dist_m,top1_road,top1_dist_m,label'];
+  for (const s of samples) {
+    const l = labels[s.src_uid];
+    csv.push([s.src_uid, s.verdict, s.polyline_dist_m, s.top1_road_name, s.top1_dist_m, l !== undefined ? l : ''].join(','));
+  }
+  const blob = new Blob([csv.join('\n')], {type: 'text/csv'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `visual_validation_labels_${new Date().toISOString().slice(0,10)}.csv`;
+  a.click();
+}
+function copyKakaoLink() {
+  const s = samples[idx];
+  const url = `https://map.kakao.com/link/map/${encodeURIComponent(s.assigned_road_name)},${s.b_lat},${s.b_lon}`;
+  navigator.clipboard.writeText(url).then(() => alert('Copied: ' + url));
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight') next();
+  else if (e.key === 'ArrowLeft') prev();
+  else if (e.key === '1') setLabel(1);
+  else if (e.key === '0') setLabel(0);
+  else if (e.key === '?' || e.key === '/') setLabel('?');
+});
+
+loadSamples();
+</script>
+</body>
+</html>

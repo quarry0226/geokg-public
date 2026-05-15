@@ -1,0 +1,46 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below."
+title: "k-GeoKG: A Declarative Geographic Knowledge Graph Framework for District-Scale Urban Infrastructure Analysis"
+authors:
+  - family-names: "Lee"
+    given-names: "Chae-Seok"
+    affiliation: "KAIST"
+    email: "quarry@kaist.ac.kr"
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+  - family-names: "Park"
+    given-names: "Dae-seung"
+    affiliation: "KAIST"
+  - family-names: "Choi"
+    given-names: "Jae-min"
+    affiliation: "KAIST"
+  - family-names: "Chang"
+    given-names: "Ho-jong"
+    affiliation: "Chungnam National University"
+repository-code: "https://github.com/quarry0226/geokg-public"
+url: "https://github.com/quarry0226/geokg-public"
+license: MIT
+version: "1.0.0"
+date-released: "2026-05-12"
+keywords:
+  - geographic knowledge graph
+  - digital twin
+  - urban infrastructure analysis
+  - declarative relationship generation
+  - road network topology
+  - spatial analysis
+  - Neo4j
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Lee"
+      given-names: "Chae-Seok"
+    - family-names: "Park"
+      given-names: "Dae-seung"
+    - family-names: "Choi"
+      given-names: "Jae-min"
+    - family-names: "Chang"
+      given-names: "Ho-jong"
+  title: "A Declarative Geographic Knowledge Graph Framework for District-Scale Urban Infrastructure Analysis"
+  journal: "IEEE Access"
+  year: 2026
+  doi: "10.1109/ACCESS.2026.XXXXXXX"
