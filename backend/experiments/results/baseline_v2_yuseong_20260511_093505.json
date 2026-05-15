@@ -1,0 +1,44 @@
+{
+  "region": "yuseong",
+  "counts": {
+    "parcels": 71580,
+    "buildings": 18106,
+    "buildings_with_pnu": 18081,
+    "buildings_with_summary": 1253,
+    "entrances": 18284,
+    "building_entrance_matched": 17824,
+    "roads": 2210,
+    "intersections": 8325,
+    "auto_road_links": 16504,
+    "shelter_total": 413,
+    "transit_total": 666,
+    "park_total": 265,
+    "monitor_total": 0
+  },
+  "timing_sec": {
+    "parcels": 4.7,
+    "buildings": 133.34,
+    "entrances": 16.89,
+    "roads": 0.12,
+    "intersections": 0.44,
+    "auto_road_links": 1.72,
+    "safety_facilities": 0.59
+  },
+  "extras": {
+    "entrance_match_rate_pct": 98.4,
+    "shelter_breakdown": {
+      "civil_defense": 113,
+      "earthquake_outdoor": 57,
+      "cooling_center": 243
+    },
+    "transit_breakdown": {
+      "bus_stop": 646,
+      "taxi_stand": 20
+    },
+    "park_breakdown": {
+      "tl_park": 161,
+      "small_park": 28,
+      "playground": 76
+    }
+  }
+}

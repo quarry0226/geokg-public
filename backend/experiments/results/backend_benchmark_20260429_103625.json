@@ -1,0 +1,46 @@
+{
+  "experiment": "backend_benchmark",
+  "addresses": [
+    "R1.4",
+    "R2.16",
+    "R2.8"
+  ],
+  "timestamp": "2026-04-29T10:36:25.666460",
+  "params": {
+    "radius_m": 500.0,
+    "max_targets": 3,
+    "brute_sample": 2000
+  },
+  "data": {
+    "n_buildings": 58409,
+    "n_shelters": 433,
+    "load_time_s": 0.547
+  },
+  "results": [
+    {
+      "backend": "Neo4j (materialized)",
+      "construction_time_s": null,
+      "query_time_s": 0.5495,
+      "total_time_s": 0.5495,
+      "result_count": 90541,
+      "notes": "Reads pre-existing NEAREST_SHELTER edges; no spatial computation at query time"
+    },
+    {
+      "backend": "Shapely STRtree (R-tree)",
+      "construction_time_s": 0.0018,
+      "query_time_s": 1.7608,
+      "total_time_s": 1.7626,
+      "result_count": 92955,
+      "notes": "Builds in-memory R-tree on shelters, queries each building with bbox+Haversine refinement"
+    },
+    {
+      "backend": "Brute-force Haversine (sample=2000)",
+      "construction_time_s": 0,
+      "query_time_s": 0.4094,
+      "total_time_s": 0.4094,
+      "result_count": 3186,
+      "extrapolated_full_time_s": 11.9577,
+      "notes": "Pairwise Haversine on 2000 buildings × 433 shelters; extrapolated to full population by ×29.2"
+    }
+  ]
+}

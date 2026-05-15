@@ -1,0 +1,46 @@
+{
+  "region": "sejong",
+  "counts": {
+    "parcels": 206880,
+    "buildings": 27773,
+    "buildings_with_pnu": 27673,
+    "buildings_with_summary": 3886,
+    "entrances": 28092,
+    "building_entrance_matched": 27332,
+    "roads": 4201,
+    "intersections": 25639,
+    "auto_road_links": 53808,
+    "shelter_total": 874,
+    "transit_total": 1081,
+    "park_total": 276,
+    "monitor_total": 218
+  },
+  "timing_sec": {
+    "parcels": 9.87,
+    "buildings": 347.09,
+    "entrances": 0.45,
+    "roads": 0.06,
+    "intersections": 0.57,
+    "auto_road_links": 2.23,
+    "safety_facilities": 0.03
+  },
+  "extras": {
+    "entrance_match_rate_pct": 98.4,
+    "shelter_breakdown": {
+      "civil_defense": 166,
+      "earthquake_outdoor": 206,
+      "disaster_refuge": 28,
+      "cooling_center": 448,
+      "emergency_water": 26
+    },
+    "transit_breakdown": {
+      "bus_stop": 1047,
+      "taxi_stand": 34
+    },
+    "park_breakdown": {
+      "tl_park": 267,
+      "playground": 6,
+      "riverside_park": 3
+    }
+  }
+}
