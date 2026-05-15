@@ -4,11 +4,20 @@ This directory ships **pre-processed Yuseong-gu and Sejong-si scene dumps** so u
 
 | File | Size (gzip) | Plain JSON | Contents |
 |---|---:|---:|---|
-| `yuseong.json.gz` | ~11 MiB | ~73 MiB | All 118,231 Yuseong nodes (buildings, parcels, roads, intersections, AutoRoadLinks, ThingsAddr, simulation entities) + seed relationships |
-| `sejong.json.gz`  | ~30 MiB | ~213 MiB | All 320,863 Sejong nodes + seed relationships |
-| **Total** | **~41 MiB** | ~286 MiB | — |
+| `yuseong.json.gz` | ~6 MiB | ~48 MiB | All 118,231 Yuseong nodes (buildings, parcels, roads, intersections, AutoRoadLinks, ThingsAddr, simulation entities) + seed relationships |
+| `sejong.json.gz`  | ~16 MiB | ~143 MiB | All 320,863 Sejong nodes + seed relationships |
+| **Total** | **~22 MiB** | ~191 MiB | — |
 
-The compression ratio is 14% because the polygon `boundary` / polyline `coordinates` fields are dense decimal-coordinate strings that compress very well.
+The compression ratio is ~12 % because the remaining polyline geometries (`auto_road_links[].geometry`, `roads[].coordinates`) are dense decimal-coordinate strings that compress very well.
+
+### What's NOT in these dumps
+
+To keep each file under the 25 MB GitHub web-upload limit, two visualisation-only fields are omitted:
+
+- `parcels[].boundary` — the parcel polygon vertex list (the rule engine joins parcels to buildings by the PNU attribute, not by polygon geometry, so this field is irrelevant to all reported analytical results).
+- `buildings[].boundary` — the building-footprint polygon (the engine uses the centroid `longitude`/`latitude` plus `width`/`depth` for spatial logic; the footprint is only used by the 3D viewer for extruded-polygon rendering).
+
+If you need either polygon for rendering or footprint-precision analysis, reload from the raw SHP sources documented in `../../docs/DATA_DOWNLOAD.md` — the dumps and the SHP loader produce byte-identical engine inputs for all non-rendering fields, so the paper's headline numbers are preserved either way.
 
 ## How the dumps were produced
 
