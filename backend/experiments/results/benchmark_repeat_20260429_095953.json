@@ -1,0 +1,220 @@
+{
+  "experiment": "benchmark_repeat",
+  "addresses": [
+    "R2.3"
+  ],
+  "timestamp": "2026-04-29T09:59:53.269984",
+  "runs": 3,
+  "individual_runs": [
+    {
+      "run": 1,
+      "total_elapsed_s": 236.416,
+      "strategies": {
+        "attribute_match": {
+          "elapsed_s": 1.296,
+          "rels_created": 103942
+        },
+        "nearest": {
+          "elapsed_s": 29.902,
+          "rels_created": 44192
+        },
+        "same_attribute_cluster": {
+          "elapsed_s": 8.997,
+          "rels_created": 475837
+        },
+        "proximity": {
+          "elapsed_s": 118.729,
+          "rels_created": 331066
+        },
+        "attribute_prefix_proximity": {
+          "elapsed_s": 73.242,
+          "rels_created": 1171
+        },
+        "through_relationship": {
+          "elapsed_s": 4.11,
+          "rels_created": 379808
+        }
+      }
+    },
+    {
+      "run": 2,
+      "total_elapsed_s": 255.877,
+      "strategies": {
+        "attribute_match": {
+          "elapsed_s": 1.172,
+          "rels_created": 103942
+        },
+        "nearest": {
+          "elapsed_s": 29.691,
+          "rels_created": 44192
+        },
+        "same_attribute_cluster": {
+          "elapsed_s": 9.659,
+          "rels_created": 475837
+        },
+        "proximity": {
+          "elapsed_s": 134.696,
+          "rels_created": 331066
+        },
+        "attribute_prefix_proximity": {
+          "elapsed_s": 76.374,
+          "rels_created": 1171
+        },
+        "through_relationship": {
+          "elapsed_s": 4.163,
+          "rels_created": 379808
+        }
+      }
+    },
+    {
+      "run": 3,
+      "total_elapsed_s": 224.682,
+      "strategies": {
+        "attribute_match": {
+          "elapsed_s": 1.253,
+          "rels_created": 103942
+        },
+        "nearest": {
+          "elapsed_s": 30.139,
+          "rels_created": 44192
+        },
+        "same_attribute_cluster": {
+          "elapsed_s": 8.696,
+          "rels_created": 475837
+        },
+        "proximity": {
+          "elapsed_s": 113.829,
+          "rels_created": 331066
+        },
+        "attribute_prefix_proximity": {
+          "elapsed_s": 66.698,
+          "rels_created": 1171
+        },
+        "through_relationship": {
+          "elapsed_s": 3.918,
+          "rels_created": 379808
+        }
+      }
+    }
+  ],
+  "aggregated": {
+    "total_elapsed_s": {
+      "n": 3,
+      "mean": 238.992,
+      "stdev": 15.756,
+      "min": 224.682,
+      "max": 255.877,
+      "ci_95_halfwidth": 17.83
+    },
+    "by_strategy": {
+      "attribute_match": {
+        "elapsed_s": {
+          "n": 3,
+          "mean": 1.24,
+          "stdev": 0.063,
+          "min": 1.172,
+          "max": 1.296,
+          "ci_95_halfwidth": 0.071
+        },
+        "rels_created": {
+          "n": 3,
+          "mean": 103942,
+          "stdev": 0.0,
+          "min": 103942,
+          "max": 103942,
+          "ci_95_halfwidth": 0.0
+        }
+      },
+      "nearest": {
+        "elapsed_s": {
+          "n": 3,
+          "mean": 29.911,
+          "stdev": 0.224,
+          "min": 29.691,
+          "max": 30.139,
+          "ci_95_halfwidth": 0.254
+        },
+        "rels_created": {
+          "n": 3,
+          "mean": 44192,
+          "stdev": 0.0,
+          "min": 44192,
+          "max": 44192,
+          "ci_95_halfwidth": 0.0
+        }
+      },
+      "same_attribute_cluster": {
+        "elapsed_s": {
+          "n": 3,
+          "mean": 9.117,
+          "stdev": 0.493,
+          "min": 8.696,
+          "max": 9.659,
+          "ci_95_halfwidth": 0.557
+        },
+        "rels_created": {
+          "n": 3,
+          "mean": 475837,
+          "stdev": 0.0,
+          "min": 475837,
+          "max": 475837,
+          "ci_95_halfwidth": 0.0
+        }
+      },
+      "proximity": {
+        "elapsed_s": {
+          "n": 3,
+          "mean": 122.418,
+          "stdev": 10.912,
+          "min": 113.829,
+          "max": 134.696,
+          "ci_95_halfwidth": 12.348
+        },
+        "rels_created": {
+          "n": 3,
+          "mean": 331066,
+          "stdev": 0.0,
+          "min": 331066,
+          "max": 331066,
+          "ci_95_halfwidth": 0.0
+        }
+      },
+      "attribute_prefix_proximity": {
+        "elapsed_s": {
+          "n": 3,
+          "mean": 72.105,
+          "stdev": 4.937,
+          "min": 66.698,
+          "max": 76.374,
+          "ci_95_halfwidth": 5.587
+        },
+        "rels_created": {
+          "n": 3,
+          "mean": 1171,
+          "stdev": 0.0,
+          "min": 1171,
+          "max": 1171,
+          "ci_95_halfwidth": 0.0
+        }
+      },
+      "through_relationship": {
+        "elapsed_s": {
+          "n": 3,
+          "mean": 4.064,
+          "stdev": 0.129,
+          "min": 3.918,
+          "max": 4.163,
+          "ci_95_halfwidth": 0.146
+        },
+        "rels_created": {
+          "n": 3,
+          "mean": 379808,
+          "stdev": 0.0,
+          "min": 379808,
+          "max": 379808,
+          "ci_95_halfwidth": 0.0
+        }
+      }
+    }
+  }
+}

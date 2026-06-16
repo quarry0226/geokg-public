@@ -1,0 +1,2709 @@
+{
+  "experiment": "auto_validate_enhanced",
+  "addresses": [
+    "R1.3",
+    "R2.20"
+  ],
+  "timestamp": "2026-04-29T10:33:49.416202",
+  "csv_path": "C:/Users/User/Documents/Claude/Projects/geokg/k-GeoKG/backend/experiments/results/validation_sample_20260429_094606.csv",
+  "params": {
+    "max_dist_m": 500,
+    "k": 3
+  },
+  "fronts_road": {
+    "total": 200,
+    "verdicts": {
+      "OK_NEAREST_AND_CLOSE": 64,
+      "OK_NEAREST_BUT_FAR": 0,
+      "OK_NOT_NEAREST_BUT_CLOSE": 90,
+      "FAIL_NOT_NEAREST_AND_FAR": 46,
+      "ERROR": 0
+    },
+    "precision_strict": {
+      "successes": 64,
+      "wilson_95ci": [
+        0.32,
+        0.2593,
+        0.3875
+      ]
+    },
+    "precision_lenient": {
+      "successes": 154,
+      "wilson_95ci": [
+        0.77,
+        0.7069,
+        0.8229
+      ]
+    },
+    "details": [
+      {
+        "src_uid": "BLD010000005PHHCE",
+        "tgt_uid": "road-관용로31번길",
+        "tgt_name": "관용로31번길",
+        "polyline_dist_m": 76.1,
+        "rank_in_topk": 1,
+        "top1_uid": "road-관용로31번길",
+        "top1_name": "관용로31번길",
+        "top1_dist_m": 76.1,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005QKWL6",
+        "tgt_uid": "road-학하동로64번길",
+        "tgt_name": "학하동로64번길",
+        "polyline_dist_m": 154.5,
+        "rank_in_topk": null,
+        "top1_uid": "road-진잠옛로",
+        "top1_name": "진잠옛로",
+        "top1_dist_m": 8.8,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD01000000E53P8T",
+        "tgt_uid": "road-유성대로1422번길",
+        "tgt_name": "유성대로1422번길",
+        "polyline_dist_m": 169.3,
+        "rank_in_topk": null,
+        "top1_uid": "road-유성대로",
+        "top1_name": "유성대로",
+        "top1_dist_m": 49.7,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD010000005QJ761",
+        "tgt_uid": "road-용계로164번길",
+        "tgt_name": "용계로164번길",
+        "polyline_dist_m": 85.6,
+        "rank_in_topk": 3,
+        "top1_uid": "road-용계로94번길",
+        "top1_name": "용계로94번길",
+        "top1_dist_m": 7.9,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005QAPNR",
+        "tgt_uid": "road-현충원로489번길",
+        "tgt_name": "현충원로489번길",
+        "polyline_dist_m": 29.0,
+        "rank_in_topk": 2,
+        "top1_uid": "road-현충원로485번길",
+        "top1_name": "현충원로485번길",
+        "top1_dist_m": 13.3,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000FO5N05",
+        "tgt_uid": "road-유성대로155번길",
+        "tgt_name": "유성대로155번길",
+        "polyline_dist_m": 18.2,
+        "rank_in_topk": 1,
+        "top1_uid": "road-유성대로155번길",
+        "top1_name": "유성대로155번길",
+        "top1_dist_m": 18.2,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005RDQ5E",
+        "tgt_uid": "road-구즉로48번길",
+        "tgt_name": "구즉로48번길",
+        "polyline_dist_m": 159.6,
+        "rank_in_topk": null,
+        "top1_uid": "road-대덕대로",
+        "top1_name": "대덕대로",
+        "top1_dist_m": 70.8,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD010000005P2EI2",
+        "tgt_uid": "road-봉산로12번길",
+        "tgt_name": "봉산로12번길",
+        "polyline_dist_m": 45.5,
+        "rank_in_topk": 3,
+        "top1_uid": "road-봉산로16번길",
+        "top1_name": "봉산로16번길",
+        "top1_dist_m": 9.9,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000E55S9Z",
+        "tgt_uid": "road-전민로46번길",
+        "tgt_name": "전민로46번길",
+        "polyline_dist_m": 46.6,
+        "rank_in_topk": 3,
+        "top1_uid": "road-전민로22번길",
+        "top1_name": "전민로22번길",
+        "top1_dist_m": 10.5,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005RHYAV",
+        "tgt_uid": "road-장대로80번길",
+        "tgt_name": "장대로80번길",
+        "polyline_dist_m": 196.0,
+        "rank_in_topk": 3,
+        "top1_uid": "road-장대로",
+        "top1_name": "장대로",
+        "top1_dist_m": 137.5,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005PUOUG",
+        "tgt_uid": "road-진잠로106번길",
+        "tgt_name": "진잠로106번길",
+        "polyline_dist_m": 45.4,
+        "rank_in_topk": 2,
+        "top1_uid": "road-진잠로160번길",
+        "top1_name": "진잠로160번길",
+        "top1_dist_m": 8.4,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005OPYRH",
+        "tgt_uid": "road-문지로299번길",
+        "tgt_name": "문지로299번길",
+        "polyline_dist_m": 142.2,
+        "rank_in_topk": 2,
+        "top1_uid": "road-문지로",
+        "top1_name": "문지로",
+        "top1_dist_m": 87.8,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005RHRV9",
+        "tgt_uid": "road-노은동로",
+        "tgt_name": "노은동로",
+        "polyline_dist_m": 82.3,
+        "rank_in_topk": 1,
+        "top1_uid": "road-노은동로",
+        "top1_name": "노은동로",
+        "top1_dist_m": 82.3,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000E53VLC",
+        "tgt_uid": "road-둔곡길",
+        "tgt_name": "둔곡길",
+        "polyline_dist_m": 65.4,
+        "rank_in_topk": 2,
+        "top1_uid": "road-국제과학11로",
+        "top1_name": "국제과학11로",
+        "top1_dist_m": 29.7,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000E52IER",
+        "tgt_uid": "road-와룡로136번길",
+        "tgt_name": "와룡로136번길",
+        "polyline_dist_m": 30.6,
+        "rank_in_topk": 1,
+        "top1_uid": "road-와룡로136번길",
+        "top1_name": "와룡로136번길",
+        "top1_dist_m": 30.6,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005Q973O",
+        "tgt_uid": "road-대학로163번길",
+        "tgt_name": "대학로163번길",
+        "polyline_dist_m": 9.5,
+        "rank_in_topk": 1,
+        "top1_uid": "road-대학로163번길",
+        "top1_name": "대학로163번길",
+        "top1_dist_m": 9.5,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000E55OWI",
+        "tgt_uid": "road-전민로",
+        "tgt_name": "전민로",
+        "polyline_dist_m": 323.3,
+        "rank_in_topk": null,
+        "top1_uid": "road-유성대로",
+        "top1_name": "유성대로",
+        "top1_dist_m": 271.1,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD01000000E4Y6KG",
+        "tgt_uid": "road-송림로53번길",
+        "tgt_name": "송림로53번길",
+        "polyline_dist_m": 123.2,
+        "rank_in_topk": 1,
+        "top1_uid": "road-송림로53번길",
+        "top1_name": "송림로53번길",
+        "top1_dist_m": 123.2,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005PTPN9",
+        "tgt_uid": "road-원내로57번길",
+        "tgt_name": "원내로57번길",
+        "polyline_dist_m": 74.9,
+        "rank_in_topk": null,
+        "top1_uid": "road-진잠로106번길",
+        "top1_name": "진잠로106번길",
+        "top1_dist_m": 15.2,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD010000005RI20Q",
+        "tgt_uid": "road-계룡로66번길",
+        "tgt_name": "계룡로66번길",
+        "polyline_dist_m": 13.1,
+        "rank_in_topk": 1,
+        "top1_uid": "road-계룡로66번길",
+        "top1_name": "계룡로66번길",
+        "top1_dist_m": 13.1,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000CQQ2EI",
+        "tgt_uid": "road-월드컵대로308번길",
+        "tgt_name": "월드컵대로308번길",
+        "polyline_dist_m": 12.1,
+        "rank_in_topk": 1,
+        "top1_uid": "road-월드컵대로308번길",
+        "top1_name": "월드컵대로308번길",
+        "top1_dist_m": 12.1,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005Q4NVR",
+        "tgt_uid": "road-반석서로19번길",
+        "tgt_name": "반석서로19번길",
+        "polyline_dist_m": 120.0,
+        "rank_in_topk": null,
+        "top1_uid": "road-지족북로",
+        "top1_name": "지족북로",
+        "top1_dist_m": 21.5,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD01000000E577JQ",
+        "tgt_uid": "road-죽동로242번길",
+        "tgt_name": "죽동로242번길",
+        "polyline_dist_m": 243.6,
+        "rank_in_topk": null,
+        "top1_uid": "road-유성대로",
+        "top1_name": "유성대로",
+        "top1_dist_m": 57.3,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD01000000FO5BB4",
+        "tgt_uid": "road-용계로119번길",
+        "tgt_name": "용계로119번길",
+        "polyline_dist_m": 193.0,
+        "rank_in_topk": 1,
+        "top1_uid": "road-용계로119번길",
+        "top1_name": "용계로119번길",
+        "top1_dist_m": 193.0,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005QC1BT",
+        "tgt_uid": "road-외삼로8번길",
+        "tgt_name": "외삼로8번길",
+        "polyline_dist_m": 104.9,
+        "rank_in_topk": 3,
+        "top1_uid": "road-외삼로42번길",
+        "top1_name": "외삼로42번길",
+        "top1_dist_m": 23.6,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005PSGLX",
+        "tgt_uid": "road-계백로",
+        "tgt_name": "계백로",
+        "polyline_dist_m": 104.9,
+        "rank_in_topk": 2,
+        "top1_uid": "road-계백로421번길",
+        "top1_name": "계백로421번길",
+        "top1_dist_m": 16.8,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000E53OZJ",
+        "tgt_uid": "road-대덕대로837번길",
+        "tgt_name": "대덕대로837번길",
+        "polyline_dist_m": 52.7,
+        "rank_in_topk": 1,
+        "top1_uid": "road-대덕대로837번길",
+        "top1_name": "대덕대로837번길",
+        "top1_dist_m": 52.7,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000EP5D61",
+        "tgt_uid": "road-신동1길",
+        "tgt_name": "신동1길",
+        "polyline_dist_m": 229.3,
+        "rank_in_topk": 1,
+        "top1_uid": "road-신동1길",
+        "top1_name": "신동1길",
+        "top1_dist_m": 229.3,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005QIYPA",
+        "tgt_uid": "road-성북로316번길",
+        "tgt_name": "성북로316번길",
+        "polyline_dist_m": 77.2,
+        "rank_in_topk": 2,
+        "top1_uid": "road-성북로154번길",
+        "top1_name": "성북로154번길",
+        "top1_dist_m": 56.3,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005P1ERA",
+        "tgt_uid": "road-전민로70번길",
+        "tgt_name": "전민로70번길",
+        "polyline_dist_m": 45.8,
+        "rank_in_topk": 3,
+        "top1_uid": "road-전민로26번길",
+        "top1_name": "전민로26번길",
+        "top1_dist_m": 10.9,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000E58348",
+        "tgt_uid": "road-가정로89번길",
+        "tgt_name": "가정로89번길",
+        "polyline_dist_m": 574.3,
+        "rank_in_topk": 3,
+        "top1_uid": "road-과학로",
+        "top1_name": "과학로",
+        "top1_dist_m": 20.9,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD010000005Q9HNI",
+        "tgt_uid": "road-유성대로694번길",
+        "tgt_name": "유성대로694번길",
+        "polyline_dist_m": 13.6,
+        "rank_in_topk": 2,
+        "top1_uid": "road-계룡로38번길",
+        "top1_name": "계룡로38번길",
+        "top1_dist_m": 8.4,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005QMTVF",
+        "tgt_uid": "road-동서대로179번길",
+        "tgt_name": "동서대로179번길",
+        "polyline_dist_m": 78.9,
+        "rank_in_topk": 2,
+        "top1_uid": "road-동서대로",
+        "top1_name": "동서대로",
+        "top1_dist_m": 46.9,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005Q6YDM",
+        "tgt_uid": "road-노은서로",
+        "tgt_name": "노은서로",
+        "polyline_dist_m": 135.9,
+        "rank_in_topk": 1,
+        "top1_uid": "road-노은서로",
+        "top1_name": "노은서로",
+        "top1_dist_m": 135.9,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005RAH2Z",
+        "tgt_uid": "road-관평2로",
+        "tgt_name": "관평2로",
+        "polyline_dist_m": 344.0,
+        "rank_in_topk": null,
+        "top1_uid": "road-배울2로",
+        "top1_name": "배울2로",
+        "top1_dist_m": 43.5,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD010000005QBQTZ",
+        "tgt_uid": "road-덕명로81번길",
+        "tgt_name": "덕명로81번길",
+        "polyline_dist_m": 49.8,
+        "rank_in_topk": null,
+        "top1_uid": "road-덕명동로",
+        "top1_name": "덕명동로",
+        "top1_dist_m": 17.1,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD010000005QA8F2",
+        "tgt_uid": "road-유성대로822번길",
+        "tgt_name": "유성대로822번길",
+        "polyline_dist_m": 39.8,
+        "rank_in_topk": 2,
+        "top1_uid": "road-유성대로828번길",
+        "top1_name": "유성대로828번길",
+        "top1_dist_m": 12.1,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005RITFW",
+        "tgt_uid": "road-지족동로",
+        "tgt_name": "지족동로",
+        "polyline_dist_m": 82.5,
+        "rank_in_topk": 1,
+        "top1_uid": "road-지족동로",
+        "top1_name": "지족동로",
+        "top1_dist_m": 82.5,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005RZDP7",
+        "tgt_uid": "road-유성대로1312번길",
+        "tgt_name": "유성대로1312번길",
+        "polyline_dist_m": 115.3,
+        "rank_in_topk": 1,
+        "top1_uid": "road-유성대로1312번길",
+        "top1_name": "유성대로1312번길",
+        "top1_dist_m": 115.3,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005RB1XF",
+        "tgt_uid": "road-유성대로1665번길",
+        "tgt_name": "유성대로1665번길",
+        "polyline_dist_m": 179.6,
+        "rank_in_topk": 2,
+        "top1_uid": "road-유성대로",
+        "top1_name": "유성대로",
+        "top1_dist_m": 178.9,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005RMHLU",
+        "tgt_uid": "road-상대동로36번길",
+        "tgt_name": "상대동로36번길",
+        "polyline_dist_m": 28.6,
+        "rank_in_topk": 2,
+        "top1_uid": "road-상대동로",
+        "top1_name": "상대동로",
+        "top1_dist_m": 24.4,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005PUUOG",
+        "tgt_uid": "road-교촌대정로93번길",
+        "tgt_name": "교촌대정로93번길",
+        "polyline_dist_m": 138.4,
+        "rank_in_topk": 1,
+        "top1_uid": "road-교촌대정로93번길",
+        "top1_name": "교촌대정로93번길",
+        "top1_dist_m": 138.4,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005RIIW2",
+        "tgt_uid": "road-궁동로",
+        "tgt_name": "궁동로",
+        "polyline_dist_m": 238.3,
+        "rank_in_topk": 1,
+        "top1_uid": "road-궁동로",
+        "top1_name": "궁동로",
+        "top1_dist_m": 238.3,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000CQO9FO",
+        "tgt_uid": "road-대정로28번안길",
+        "tgt_name": "대정로28번안길",
+        "polyline_dist_m": 118.7,
+        "rank_in_topk": null,
+        "top1_uid": "road-한우물로",
+        "top1_name": "한우물로",
+        "top1_dist_m": 59.7,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD010000005RM1MF",
+        "tgt_uid": "road-봉명서로",
+        "tgt_name": "봉명서로",
+        "polyline_dist_m": 78.3,
+        "rank_in_topk": 1,
+        "top1_uid": "road-봉명서로",
+        "top1_name": "봉명서로",
+        "top1_dist_m": 78.3,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000E55U5X",
+        "tgt_uid": "road-전민로70번길",
+        "tgt_name": "전민로70번길",
+        "polyline_dist_m": 22.8,
+        "rank_in_topk": 2,
+        "top1_uid": "road-전민로6번길",
+        "top1_name": "전민로6번길",
+        "top1_dist_m": 18.6,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005Q860J",
+        "tgt_uid": "road-노은로18번길",
+        "tgt_name": "노은로18번길",
+        "polyline_dist_m": 71.5,
+        "rank_in_topk": 1,
+        "top1_uid": "road-노은로18번길",
+        "top1_name": "노은로18번길",
+        "top1_dist_m": 71.5,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005QDWP3",
+        "tgt_uid": "road-가정로89번길",
+        "tgt_name": "가정로89번길",
+        "polyline_dist_m": 15.8,
+        "rank_in_topk": 1,
+        "top1_uid": "road-가정로89번길",
+        "top1_name": "가정로89번길",
+        "top1_dist_m": 15.8,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000E535CD",
+        "tgt_uid": "road-구룡달전로",
+        "tgt_name": "구룡달전로",
+        "polyline_dist_m": 75.2,
+        "rank_in_topk": 2,
+        "top1_uid": "road-구룡달전로191번길",
+        "top1_name": "구룡달전로191번길",
+        "top1_dist_m": 22.3,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000E4YRM3",
+        "tgt_uid": "road-지족북로66번길",
+        "tgt_name": "지족북로66번길",
+        "polyline_dist_m": 19.5,
+        "rank_in_topk": 1,
+        "top1_uid": "road-지족북로66번길",
+        "top1_name": "지족북로66번길",
+        "top1_dist_m": 19.5,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005Q6HNF",
+        "tgt_uid": "road-도안대로549번안길",
+        "tgt_name": "도안대로549번안길",
+        "polyline_dist_m": 7.4,
+        "rank_in_topk": 2,
+        "top1_uid": "road-월드컵대로351번길",
+        "top1_name": "월드컵대로351번길",
+        "top1_dist_m": 5.4,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005PTWC5",
+        "tgt_uid": "road-교촌대정로87번길",
+        "tgt_name": "교촌대정로87번길",
+        "polyline_dist_m": 137.6,
+        "rank_in_topk": 3,
+        "top1_uid": "road-교촌대정로93번길",
+        "top1_name": "교촌대정로93번길",
+        "top1_dist_m": 6.3,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000E59BAN",
+        "tgt_uid": "road-성북로316번길",
+        "tgt_name": "성북로316번길",
+        "polyline_dist_m": 171.3,
+        "rank_in_topk": 2,
+        "top1_uid": "road-성북로154번길",
+        "top1_name": "성북로154번길",
+        "top1_dist_m": 80.2,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000E5CT1Z",
+        "tgt_uid": "road-문화원로5번길",
+        "tgt_name": "문화원로5번길",
+        "polyline_dist_m": 47.6,
+        "rank_in_topk": 1,
+        "top1_uid": "road-문화원로5번길",
+        "top1_name": "문화원로5번길",
+        "top1_dist_m": 47.6,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005OZPQH",
+        "tgt_uid": "road-오룡2길",
+        "tgt_name": "오룡2길",
+        "polyline_dist_m": 40.0,
+        "rank_in_topk": 2,
+        "top1_uid": "road-오룡1길",
+        "top1_name": "오룡1길",
+        "top1_dist_m": 11.1,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000FODUYI",
+        "tgt_uid": "road-구룡길",
+        "tgt_name": "구룡길",
+        "polyline_dist_m": 172.6,
+        "rank_in_topk": 1,
+        "top1_uid": "road-구룡길",
+        "top1_name": "구룡길",
+        "top1_dist_m": 172.6,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005Q67GY",
+        "tgt_uid": "road-현충원로447번길",
+        "tgt_name": "현충원로447번길",
+        "polyline_dist_m": 27.9,
+        "rank_in_topk": 2,
+        "top1_uid": "road-현충원로443번길",
+        "top1_name": "현충원로443번길",
+        "top1_dist_m": 10.3,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005PHJMQ",
+        "tgt_uid": "road-유성대로1665번길",
+        "tgt_name": "유성대로1665번길",
+        "polyline_dist_m": 10.6,
+        "rank_in_topk": 1,
+        "top1_uid": "road-유성대로1665번길",
+        "top1_name": "유성대로1665번길",
+        "top1_dist_m": 10.6,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005PPAAD",
+        "tgt_uid": "road-백운로",
+        "tgt_name": "백운로",
+        "polyline_dist_m": 144.0,
+        "rank_in_topk": 2,
+        "top1_uid": "road-계백로93번길",
+        "top1_name": "계백로93번길",
+        "top1_dist_m": 104.2,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005PQ6WW",
+        "tgt_uid": "road-세점길",
+        "tgt_name": "세점길",
+        "polyline_dist_m": 735.3,
+        "rank_in_topk": null,
+        "top1_uid": "road-성북로",
+        "top1_name": "성북로",
+        "top1_dist_m": 13.8,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD01000000E63Y94",
+        "tgt_uid": "road-소문산성길",
+        "tgt_name": "소문산성길",
+        "polyline_dist_m": 448.3,
+        "rank_in_topk": 2,
+        "top1_uid": "road-국제과학로",
+        "top1_name": "국제과학로",
+        "top1_dist_m": 409.5,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005QJ27X",
+        "tgt_uid": "road-성북로154번길",
+        "tgt_name": "성북로154번길",
+        "polyline_dist_m": 6.2,
+        "rank_in_topk": 1,
+        "top1_uid": "road-성북로154번길",
+        "top1_name": "성북로154번길",
+        "top1_dist_m": 6.2,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005QCWR4",
+        "tgt_uid": "road-은구비로146번길",
+        "tgt_name": "은구비로146번길",
+        "polyline_dist_m": 31.2,
+        "rank_in_topk": 3,
+        "top1_uid": "road-은구비로155번안길",
+        "top1_name": "은구비로155번안길",
+        "top1_dist_m": 15.0,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000CQO5UZ",
+        "tgt_uid": "road-복용동로76번길",
+        "tgt_name": "복용동로76번길",
+        "polyline_dist_m": 249.9,
+        "rank_in_topk": null,
+        "top1_uid": "road-상대복용로29번길",
+        "top1_name": "상대복용로29번길",
+        "top1_dist_m": 103.8,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD01000000E5V1B0",
+        "tgt_uid": "road-계백로323번길",
+        "tgt_name": "계백로323번길",
+        "polyline_dist_m": 52.5,
+        "rank_in_topk": 1,
+        "top1_uid": "road-계백로323번길",
+        "top1_name": "계백로323번길",
+        "top1_dist_m": 52.5,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005QAHC8",
+        "tgt_uid": "road-노은서로80번길",
+        "tgt_name": "노은서로80번길",
+        "polyline_dist_m": 169.6,
+        "rank_in_topk": null,
+        "top1_uid": "road-한밭대로",
+        "top1_name": "한밭대로",
+        "top1_dist_m": 56.8,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD01000000E4YF05",
+        "tgt_uid": "road-북유성대로400번길",
+        "tgt_name": "북유성대로400번길",
+        "polyline_dist_m": 120.5,
+        "rank_in_topk": 2,
+        "top1_uid": "road-외삼로",
+        "top1_name": "외삼로",
+        "top1_dist_m": 51.8,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005QKJMU",
+        "tgt_uid": "road-복용동로76번길",
+        "tgt_name": "복용동로76번길",
+        "polyline_dist_m": 109.2,
+        "rank_in_topk": 2,
+        "top1_uid": "road-복용동로74번길",
+        "top1_name": "복용동로74번길",
+        "top1_dist_m": 12.3,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005Q6XAI",
+        "tgt_uid": "road-죽동로279번길",
+        "tgt_name": "죽동로279번길",
+        "polyline_dist_m": 34.7,
+        "rank_in_topk": 1,
+        "top1_uid": "road-죽동로279번길",
+        "top1_name": "죽동로279번길",
+        "top1_dist_m": 34.7,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000FOC0WL",
+        "tgt_uid": "road-노은동로88번길",
+        "tgt_name": "노은동로88번길",
+        "polyline_dist_m": 100.0,
+        "rank_in_topk": 3,
+        "top1_uid": "road-노은동로",
+        "top1_name": "노은동로",
+        "top1_dist_m": 73.3,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005QCTX7",
+        "tgt_uid": "road-반석로11번길",
+        "tgt_name": "반석로11번길",
+        "polyline_dist_m": 35.8,
+        "rank_in_topk": 1,
+        "top1_uid": "road-반석로11번길",
+        "top1_name": "반석로11번길",
+        "top1_dist_m": 35.8,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005PUKR9",
+        "tgt_uid": "road-도안남로",
+        "tgt_name": "도안남로",
+        "polyline_dist_m": 406.0,
+        "rank_in_topk": null,
+        "top1_uid": "road-원내로",
+        "top1_name": "원내로",
+        "top1_dist_m": 172.0,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD01000000E55SND",
+        "tgt_uid": "road-엑스포로",
+        "tgt_name": "엑스포로",
+        "polyline_dist_m": 151.7,
+        "rank_in_topk": 2,
+        "top1_uid": "road-엑스포로339번길",
+        "top1_name": "엑스포로339번길",
+        "top1_dist_m": 143.9,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005QM3OI",
+        "tgt_uid": "road-대정남로",
+        "tgt_name": "대정남로",
+        "polyline_dist_m": 205.0,
+        "rank_in_topk": 3,
+        "top1_uid": "road-한우물로",
+        "top1_name": "한우물로",
+        "top1_dist_m": 9.4,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000E5WIQX",
+        "tgt_uid": "road-도안남로",
+        "tgt_name": "도안남로",
+        "polyline_dist_m": 390.8,
+        "rank_in_topk": 2,
+        "top1_uid": "road-원내로",
+        "top1_name": "원내로",
+        "top1_dist_m": 273.9,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000E5BIM8",
+        "tgt_uid": "road-유성대로694번길",
+        "tgt_name": "유성대로694번길",
+        "polyline_dist_m": 43.7,
+        "rank_in_topk": 2,
+        "top1_uid": "road-계룡로38번길",
+        "top1_name": "계룡로38번길",
+        "top1_dist_m": 12.2,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000E53MR9",
+        "tgt_uid": "road-대덕대로653번길",
+        "tgt_name": "대덕대로653번길",
+        "polyline_dist_m": 408.6,
+        "rank_in_topk": null,
+        "top1_uid": "road-가정로",
+        "top1_name": "가정로",
+        "top1_dist_m": 198.7,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD01000000FO55VI",
+        "tgt_uid": "road-한우물로119번길",
+        "tgt_name": "한우물로119번길",
+        "polyline_dist_m": 118.5,
+        "rank_in_topk": 2,
+        "top1_uid": "road-한우물로85번길",
+        "top1_name": "한우물로85번길",
+        "top1_dist_m": 9.8,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005RS8EK",
+        "tgt_uid": "road-교촌로10번길",
+        "tgt_name": "교촌로10번길",
+        "polyline_dist_m": 129.4,
+        "rank_in_topk": 3,
+        "top1_uid": "road-호남지선고속도로",
+        "top1_name": "호남지선고속도로",
+        "top1_dist_m": 26.4,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000FOC3UM",
+        "tgt_uid": "road-덕명로56번길",
+        "tgt_name": "덕명로56번길",
+        "polyline_dist_m": 20.5,
+        "rank_in_topk": 1,
+        "top1_uid": "road-덕명로56번길",
+        "top1_name": "덕명로56번길",
+        "top1_dist_m": 20.5,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005RJFAE",
+        "tgt_uid": "road-송림로53번길",
+        "tgt_name": "송림로53번길",
+        "polyline_dist_m": 134.1,
+        "rank_in_topk": 2,
+        "top1_uid": "road-노은로",
+        "top1_name": "노은로",
+        "top1_dist_m": 35.9,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005QAVFP",
+        "tgt_uid": "road-유성대로668번길",
+        "tgt_name": "유성대로668번길",
+        "polyline_dist_m": 72.4,
+        "rank_in_topk": null,
+        "top1_uid": "road-계룡로38번길",
+        "top1_name": "계룡로38번길",
+        "top1_dist_m": 17.6,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD01000000FO559W",
+        "tgt_uid": "road-용계로41번길",
+        "tgt_name": "용계로41번길",
+        "polyline_dist_m": 313.2,
+        "rank_in_topk": 2,
+        "top1_uid": "road-도안대로",
+        "top1_name": "도안대로",
+        "top1_dist_m": 307.0,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005PXMZM",
+        "tgt_uid": "road-세동로510번길",
+        "tgt_name": "세동로510번길",
+        "polyline_dist_m": 549.0,
+        "rank_in_topk": 3,
+        "top1_uid": "road-세동로",
+        "top1_name": "세동로",
+        "top1_dist_m": 137.5,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD01000000FO3XIV",
+        "tgt_uid": "road-세점길",
+        "tgt_name": "세점길",
+        "polyline_dist_m": 607.8,
+        "rank_in_topk": 3,
+        "top1_uid": "road-성북로",
+        "top1_name": "성북로",
+        "top1_dist_m": 32.8,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD010000005RZAN2",
+        "tgt_uid": "road-동서대로179번길",
+        "tgt_name": "동서대로179번길",
+        "polyline_dist_m": 77.0,
+        "rank_in_topk": 3,
+        "top1_uid": "road-동서대로",
+        "top1_name": "동서대로",
+        "top1_dist_m": 44.8,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005RDP19",
+        "tgt_uid": "road-구즉로48번길",
+        "tgt_name": "구즉로48번길",
+        "polyline_dist_m": 116.8,
+        "rank_in_topk": 3,
+        "top1_uid": "road-송강로",
+        "top1_name": "송강로",
+        "top1_dist_m": 72.3,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000E538MQ",
+        "tgt_uid": "road-관용로31번길",
+        "tgt_name": "관용로31번길",
+        "polyline_dist_m": 208.5,
+        "rank_in_topk": null,
+        "top1_uid": "road-대덕대로",
+        "top1_name": "대덕대로",
+        "top1_dist_m": 41.7,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD010000005Q55R6",
+        "tgt_uid": "road-유성대로654번길",
+        "tgt_name": "유성대로654번길",
+        "polyline_dist_m": 47.7,
+        "rank_in_topk": 3,
+        "top1_uid": "road-도안대로549번안길",
+        "top1_name": "도안대로549번안길",
+        "top1_dist_m": 26.2,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005R9OAD",
+        "tgt_uid": "road-엑스포로97번길",
+        "tgt_name": "엑스포로97번길",
+        "polyline_dist_m": 290.3,
+        "rank_in_topk": 2,
+        "top1_uid": "road-엑스포로",
+        "top1_name": "엑스포로",
+        "top1_dist_m": 70.8,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005RYNMD",
+        "tgt_uid": "road-계룡로74번길",
+        "tgt_name": "계룡로74번길",
+        "polyline_dist_m": 48.3,
+        "rank_in_topk": 1,
+        "top1_uid": "road-계룡로74번길",
+        "top1_name": "계룡로74번길",
+        "top1_dist_m": 48.3,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000FOD1XO",
+        "tgt_uid": "road-엑스포로539번길",
+        "tgt_name": "엑스포로539번길",
+        "polyline_dist_m": 50.2,
+        "rank_in_topk": 1,
+        "top1_uid": "road-엑스포로539번길",
+        "top1_name": "엑스포로539번길",
+        "top1_dist_m": 50.2,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005Q4OQN",
+        "tgt_uid": "road-신성로72번안길",
+        "tgt_name": "신성로72번안길",
+        "polyline_dist_m": 42.2,
+        "rank_in_topk": 3,
+        "top1_uid": "road-신성로84번길",
+        "top1_name": "신성로84번길",
+        "top1_dist_m": 21.1,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005Q4GVK",
+        "tgt_uid": "road-둔곡길",
+        "tgt_name": "둔곡길",
+        "polyline_dist_m": 450.7,
+        "rank_in_topk": null,
+        "top1_uid": "road-구룡달전로",
+        "top1_name": "구룡달전로",
+        "top1_dist_m": 8.0,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD010000005P0ZHK",
+        "tgt_uid": "road-아리랑로",
+        "tgt_name": "아리랑로",
+        "polyline_dist_m": 116.9,
+        "rank_in_topk": 3,
+        "top1_uid": "road-엑스포로",
+        "top1_name": "엑스포로",
+        "top1_dist_m": 88.5,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005QAK21",
+        "tgt_uid": "road-노은동로75번길",
+        "tgt_name": "노은동로75번길",
+        "polyline_dist_m": 12.6,
+        "rank_in_topk": 2,
+        "top1_uid": "road-노은동로87번길",
+        "top1_name": "노은동로87번길",
+        "top1_dist_m": 10.4,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005QIVJ1",
+        "tgt_uid": "road-한우물로85번길",
+        "tgt_name": "한우물로85번길",
+        "polyline_dist_m": 17.7,
+        "rank_in_topk": 2,
+        "top1_uid": "road-한우물로77번길",
+        "top1_name": "한우물로77번길",
+        "top1_dist_m": 5.8,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005RXXLL",
+        "tgt_uid": "road-갑동로31번길",
+        "tgt_name": "갑동로31번길",
+        "polyline_dist_m": 208.9,
+        "rank_in_topk": 2,
+        "top1_uid": "road-갑동로25번길",
+        "top1_name": "갑동로25번길",
+        "top1_dist_m": 112.7,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005RXMC1",
+        "tgt_uid": "road-노은로410번길",
+        "tgt_name": "노은로410번길",
+        "polyline_dist_m": 395.4,
+        "rank_in_topk": null,
+        "top1_uid": "road-하기로143번길",
+        "top1_name": "하기로143번길",
+        "top1_dist_m": 33.4,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD01000000E5783B",
+        "tgt_uid": "road-한밭대로313번길",
+        "tgt_name": "한밭대로313번길",
+        "polyline_dist_m": 233.1,
+        "rank_in_topk": null,
+        "top1_uid": "road-죽동로",
+        "top1_name": "죽동로",
+        "top1_dist_m": 116.8,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD01000000FO5JGH",
+        "tgt_uid": "road-교촌대정로87번길",
+        "tgt_name": "교촌대정로87번길",
+        "polyline_dist_m": 19.9,
+        "rank_in_topk": 1,
+        "top1_uid": "road-교촌대정로87번길",
+        "top1_name": "교촌대정로87번길",
+        "top1_dist_m": 19.9,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005QCTCM",
+        "tgt_uid": "road-지족북로",
+        "tgt_name": "지족북로",
+        "polyline_dist_m": 50.6,
+        "rank_in_topk": 2,
+        "top1_uid": "road-지족북로6번길",
+        "top1_name": "지족북로6번길",
+        "top1_dist_m": 8.3,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005RKIPX",
+        "tgt_uid": "road-과학로",
+        "tgt_name": "과학로",
+        "polyline_dist_m": 338.5,
+        "rank_in_topk": 1,
+        "top1_uid": "road-과학로",
+        "top1_name": "과학로",
+        "top1_dist_m": 338.5,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000E56U70",
+        "tgt_uid": "road-은구비로",
+        "tgt_name": "은구비로",
+        "polyline_dist_m": 13.1,
+        "rank_in_topk": 1,
+        "top1_uid": "road-은구비로",
+        "top1_name": "은구비로",
+        "top1_dist_m": 13.1,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005P31DL",
+        "tgt_uid": "road-테크노4로",
+        "tgt_name": "테크노4로",
+        "polyline_dist_m": 95.9,
+        "rank_in_topk": null,
+        "top1_uid": "road-관평2로",
+        "top1_name": "관평2로",
+        "top1_dist_m": 14.3,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD01000000FOCP4I",
+        "tgt_uid": "road-과학로",
+        "tgt_name": "과학로",
+        "polyline_dist_m": 530.0,
+        "rank_in_topk": 2,
+        "top1_uid": "road-가정로",
+        "top1_name": "가정로",
+        "top1_dist_m": 428.3,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD010000005QGYYH",
+        "tgt_uid": "road-어은로58번길",
+        "tgt_name": "어은로58번길",
+        "polyline_dist_m": 171.2,
+        "rank_in_topk": 1,
+        "top1_uid": "road-어은로58번길",
+        "top1_name": "어은로58번길",
+        "top1_dist_m": 171.2,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005RIH8D",
+        "tgt_uid": "road-은구비서로3번길",
+        "tgt_name": "은구비서로3번길",
+        "polyline_dist_m": 128.6,
+        "rank_in_topk": 3,
+        "top1_uid": "road-은구비남로",
+        "top1_name": "은구비남로",
+        "top1_dist_m": 69.7,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005QLS3L",
+        "tgt_uid": "road-한우물로157번길",
+        "tgt_name": "한우물로157번길",
+        "polyline_dist_m": 348.0,
+        "rank_in_topk": null,
+        "top1_uid": "road-도안대로",
+        "top1_name": "도안대로",
+        "top1_dist_m": 64.6,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD010000005QL6EA",
+        "tgt_uid": "road-수통골로71번길",
+        "tgt_name": "수통골로71번길",
+        "polyline_dist_m": 80.8,
+        "rank_in_topk": 3,
+        "top1_uid": "road-수통골로55번길",
+        "top1_name": "수통골로55번길",
+        "top1_dist_m": 7.2,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005RYLH6",
+        "tgt_uid": "road-갑동로63번길",
+        "tgt_name": "갑동로63번길",
+        "polyline_dist_m": 148.9,
+        "rank_in_topk": 3,
+        "top1_uid": "road-갑동로25번길",
+        "top1_name": "갑동로25번길",
+        "top1_dist_m": 63.0,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005OQ6LK",
+        "tgt_uid": "road-엑스포로123번길",
+        "tgt_name": "엑스포로123번길",
+        "polyline_dist_m": 53.0,
+        "rank_in_topk": 1,
+        "top1_uid": "road-엑스포로123번길",
+        "top1_name": "엑스포로123번길",
+        "top1_dist_m": 53.0,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005S01T1",
+        "tgt_uid": "road-유성대로626번길",
+        "tgt_name": "유성대로626번길",
+        "polyline_dist_m": 201.7,
+        "rank_in_topk": null,
+        "top1_uid": "road-월드컵대로",
+        "top1_name": "월드컵대로",
+        "top1_dist_m": 132.7,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD010000005QU2YZ",
+        "tgt_uid": "road-가정로287번길",
+        "tgt_name": "가정로287번길",
+        "polyline_dist_m": 16.1,
+        "rank_in_topk": 1,
+        "top1_uid": "road-가정로287번길",
+        "top1_name": "가정로287번길",
+        "top1_dist_m": 16.1,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000FO416O",
+        "tgt_uid": "road-송정길6번길",
+        "tgt_name": "송정길6번길",
+        "polyline_dist_m": 13.1,
+        "rank_in_topk": 1,
+        "top1_uid": "road-송정길6번길",
+        "top1_name": "송정길6번길",
+        "top1_dist_m": 13.1,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005QMLDP",
+        "tgt_uid": "road-복용로",
+        "tgt_name": "복용로",
+        "polyline_dist_m": 47.8,
+        "rank_in_topk": 2,
+        "top1_uid": "road-학하복용로",
+        "top1_name": "학하복용로",
+        "top1_dist_m": 18.4,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005PV57B",
+        "tgt_uid": "road-진잠로59번길",
+        "tgt_name": "진잠로59번길",
+        "polyline_dist_m": 82.6,
+        "rank_in_topk": null,
+        "top1_uid": "road-진잠로74번길",
+        "top1_name": "진잠로74번길",
+        "top1_dist_m": 19.9,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD01000000E63HKY",
+        "tgt_uid": "road-금남구즉로1465번길",
+        "tgt_name": "금남구즉로1465번길",
+        "polyline_dist_m": 18.2,
+        "rank_in_topk": 1,
+        "top1_uid": "road-금남구즉로1465번길",
+        "top1_name": "금남구즉로1465번길",
+        "top1_dist_m": 18.2,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000E5765B",
+        "tgt_uid": "road-죽동로279번길",
+        "tgt_name": "죽동로279번길",
+        "polyline_dist_m": 184.4,
+        "rank_in_topk": 2,
+        "top1_uid": "road-유성대로",
+        "top1_name": "유성대로",
+        "top1_dist_m": 57.6,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005RI2D3",
+        "tgt_uid": "road-왕가봉로",
+        "tgt_name": "왕가봉로",
+        "polyline_dist_m": 41.9,
+        "rank_in_topk": 2,
+        "top1_uid": "road-왕가봉로2번길",
+        "top1_name": "왕가봉로2번길",
+        "top1_dist_m": 33.6,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005S0C7Q",
+        "tgt_uid": "road-봉명서로",
+        "tgt_name": "봉명서로",
+        "polyline_dist_m": 80.8,
+        "rank_in_topk": 2,
+        "top1_uid": "road-봉명서로20번길",
+        "top1_name": "봉명서로20번길",
+        "top1_dist_m": 75.2,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005Q9B8X",
+        "tgt_uid": "road-유성대로730번길",
+        "tgt_name": "유성대로730번길",
+        "polyline_dist_m": 52.7,
+        "rank_in_topk": 3,
+        "top1_uid": "road-유성대로752번길",
+        "top1_name": "유성대로752번길",
+        "top1_dist_m": 8.4,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000E5CQ4Z",
+        "tgt_uid": "road-유성대로736번길",
+        "tgt_name": "유성대로736번길",
+        "polyline_dist_m": 34.9,
+        "rank_in_topk": 3,
+        "top1_uid": "road-문화원로10번길",
+        "top1_name": "문화원로10번길",
+        "top1_dist_m": 23.0,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005Q9V3C",
+        "tgt_uid": "road-유성대로719번안길",
+        "tgt_name": "유성대로719번안길",
+        "polyline_dist_m": 58.4,
+        "rank_in_topk": null,
+        "top1_uid": "road-유성대로",
+        "top1_name": "유성대로",
+        "top1_dist_m": 14.4,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD01000000EP5LQT",
+        "tgt_uid": "road-대금로101번길",
+        "tgt_name": "대금로101번길",
+        "polyline_dist_m": 55.9,
+        "rank_in_topk": 2,
+        "top1_uid": "road-대금로",
+        "top1_name": "대금로",
+        "top1_dist_m": 7.8,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000FO54DZ",
+        "tgt_uid": "road-봉우로",
+        "tgt_name": "봉우로",
+        "polyline_dist_m": 245.2,
+        "rank_in_topk": 3,
+        "top1_uid": "road-도안대로",
+        "top1_name": "도안대로",
+        "top1_dist_m": 136.4,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005Q8U9G",
+        "tgt_uid": "road-갑동로31번길",
+        "tgt_name": "갑동로31번길",
+        "polyline_dist_m": 141.0,
+        "rank_in_topk": null,
+        "top1_uid": "road-갑동로25번길",
+        "top1_name": "갑동로25번길",
+        "top1_dist_m": 70.8,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD01000000C46SMA",
+        "tgt_uid": "road-학하로211번길",
+        "tgt_name": "학하로211번길",
+        "polyline_dist_m": 86.3,
+        "rank_in_topk": null,
+        "top1_uid": "road-학하복용로",
+        "top1_name": "학하복용로",
+        "top1_dist_m": 17.5,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD010000005QIK4B",
+        "tgt_uid": "road-용계로",
+        "tgt_name": "용계로",
+        "polyline_dist_m": 128.2,
+        "rank_in_topk": 2,
+        "top1_uid": "road-용계로119번길",
+        "top1_name": "용계로119번길",
+        "top1_dist_m": 59.2,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005P1NSK",
+        "tgt_uid": "road-전민로6번길",
+        "tgt_name": "전민로6번길",
+        "polyline_dist_m": 22.7,
+        "rank_in_topk": 2,
+        "top1_uid": "road-전민로10번길",
+        "top1_name": "전민로10번길",
+        "top1_dist_m": 12.8,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005RA95U",
+        "tgt_uid": "road-관평천변로",
+        "tgt_name": "관평천변로",
+        "polyline_dist_m": 272.5,
+        "rank_in_topk": null,
+        "top1_uid": "road-용산1로",
+        "top1_name": "용산1로",
+        "top1_dist_m": 72.8,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD010000005RFJSW",
+        "tgt_uid": "road-원내로51번길",
+        "tgt_name": "원내로51번길",
+        "polyline_dist_m": 176.5,
+        "rank_in_topk": null,
+        "top1_uid": "road-계백로",
+        "top1_name": "계백로",
+        "top1_dist_m": 53.8,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD01000000E5VYK6",
+        "tgt_uid": "road-계백로149번길",
+        "tgt_name": "계백로149번길",
+        "polyline_dist_m": 44.2,
+        "rank_in_topk": 1,
+        "top1_uid": "road-계백로149번길",
+        "top1_name": "계백로149번길",
+        "top1_dist_m": 44.2,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005QI03Q",
+        "tgt_uid": "road-가정로89번길",
+        "tgt_name": "가정로89번길",
+        "polyline_dist_m": 500.0,
+        "rank_in_topk": 3,
+        "top1_uid": "road-과학로",
+        "top1_name": "과학로",
+        "top1_dist_m": 36.8,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005OPSG0",
+        "tgt_uid": "road-엑스포로151번길",
+        "tgt_name": "엑스포로151번길",
+        "polyline_dist_m": 81.8,
+        "rank_in_topk": 2,
+        "top1_uid": "road-대덕대로512번길",
+        "top1_name": "대덕대로512번길",
+        "top1_dist_m": 25.3,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000CQL9X3",
+        "tgt_uid": "road-진잠로59번길",
+        "tgt_name": "진잠로59번길",
+        "polyline_dist_m": 21.8,
+        "rank_in_topk": 2,
+        "top1_uid": "road-진잠로",
+        "top1_name": "진잠로",
+        "top1_dist_m": 14.5,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005S02IR",
+        "tgt_uid": "road-월드컵대로290번길",
+        "tgt_name": "월드컵대로290번길",
+        "polyline_dist_m": 65.6,
+        "rank_in_topk": 1,
+        "top1_uid": "road-월드컵대로290번길",
+        "top1_name": "월드컵대로290번길",
+        "top1_dist_m": 65.6,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005QJ47Z",
+        "tgt_uid": "road-상대서로",
+        "tgt_name": "상대서로",
+        "polyline_dist_m": 8.4,
+        "rank_in_topk": 1,
+        "top1_uid": "road-상대서로",
+        "top1_name": "상대서로",
+        "top1_dist_m": 8.4,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000E576OU",
+        "tgt_uid": "road-죽동로297번길",
+        "tgt_name": "죽동로297번길",
+        "polyline_dist_m": 554.0,
+        "rank_in_topk": 3,
+        "top1_uid": "road-유성대로",
+        "top1_name": "유성대로",
+        "top1_dist_m": 446.1,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD01000000FOCNX9",
+        "tgt_uid": "road-엑스포로339번길",
+        "tgt_name": "엑스포로339번길",
+        "polyline_dist_m": 291.8,
+        "rank_in_topk": 1,
+        "top1_uid": "road-엑스포로339번길",
+        "top1_name": "엑스포로339번길",
+        "top1_dist_m": 291.8,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005QDIMM",
+        "tgt_uid": "road-신성로",
+        "tgt_name": "신성로",
+        "polyline_dist_m": 63.1,
+        "rank_in_topk": null,
+        "top1_uid": "road-신성로68번길",
+        "top1_name": "신성로68번길",
+        "top1_dist_m": 10.4,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD010000005P0LE3",
+        "tgt_uid": "road-전민로46번길",
+        "tgt_name": "전민로46번길",
+        "polyline_dist_m": 21.2,
+        "rank_in_topk": 1,
+        "top1_uid": "road-전민로46번길",
+        "top1_name": "전민로46번길",
+        "top1_dist_m": 21.2,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005QJQKY",
+        "tgt_uid": "road-복용동로79번길",
+        "tgt_name": "복용동로79번길",
+        "polyline_dist_m": 73.1,
+        "rank_in_topk": 2,
+        "top1_uid": "road-복용동로",
+        "top1_name": "복용동로",
+        "top1_dist_m": 62.1,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005PQXUL",
+        "tgt_uid": "road-계백로153번길",
+        "tgt_name": "계백로153번길",
+        "polyline_dist_m": 59.2,
+        "rank_in_topk": 2,
+        "top1_uid": "road-계백로149번길",
+        "top1_name": "계백로149번길",
+        "top1_dist_m": 57.1,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000E59OUK",
+        "tgt_uid": "road-대정북로",
+        "tgt_name": "대정북로",
+        "polyline_dist_m": 208.8,
+        "rank_in_topk": 2,
+        "top1_uid": "road-유성대로250번길",
+        "top1_name": "유성대로250번길",
+        "top1_dist_m": 9.0,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005QDEA6",
+        "tgt_uid": "road-신성로61번안길",
+        "tgt_name": "신성로61번안길",
+        "polyline_dist_m": 33.2,
+        "rank_in_topk": null,
+        "top1_uid": "road-신성로83번길",
+        "top1_name": "신성로83번길",
+        "top1_dist_m": 10.7,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD01000000FQOZNP",
+        "tgt_uid": "road-신동1길",
+        "tgt_name": "신동1길",
+        "polyline_dist_m": 390.9,
+        "rank_in_topk": 2,
+        "top1_uid": "road-금남구즉로",
+        "top1_name": "금남구즉로",
+        "top1_dist_m": 45.0,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000E56OBY",
+        "tgt_uid": "road-노은서로210번길",
+        "tgt_name": "노은서로210번길",
+        "polyline_dist_m": 25.8,
+        "rank_in_topk": 1,
+        "top1_uid": "road-노은서로210번길",
+        "top1_name": "노은서로210번길",
+        "top1_dist_m": 25.8,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005RY5HQ",
+        "tgt_uid": "road-지족로148번길",
+        "tgt_name": "지족로148번길",
+        "polyline_dist_m": 294.4,
+        "rank_in_topk": 3,
+        "top1_uid": "road-지족동로",
+        "top1_name": "지족동로",
+        "top1_dist_m": 31.9,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000E5CM0R",
+        "tgt_uid": "road-봉명서로20번길",
+        "tgt_name": "봉명서로20번길",
+        "polyline_dist_m": 18.1,
+        "rank_in_topk": 1,
+        "top1_uid": "road-봉명서로20번길",
+        "top1_name": "봉명서로20번길",
+        "top1_dist_m": 18.1,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005Q89H3",
+        "tgt_uid": "road-유성대로654번길",
+        "tgt_name": "유성대로654번길",
+        "polyline_dist_m": 74.6,
+        "rank_in_topk": null,
+        "top1_uid": "road-유성대로668번길",
+        "top1_name": "유성대로668번길",
+        "top1_dist_m": 19.5,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD010000005PTWVO",
+        "tgt_uid": "road-교촌대정로93번길",
+        "tgt_name": "교촌대정로93번길",
+        "polyline_dist_m": 27.7,
+        "rank_in_topk": 1,
+        "top1_uid": "road-교촌대정로93번길",
+        "top1_name": "교촌대정로93번길",
+        "top1_dist_m": 27.7,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005QM7ZX",
+        "tgt_uid": "road-원신흥북로",
+        "tgt_name": "원신흥북로",
+        "polyline_dist_m": 112.6,
+        "rank_in_topk": 2,
+        "top1_uid": "road-봉명로",
+        "top1_name": "봉명로",
+        "top1_dist_m": 65.9,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005PTFIU",
+        "tgt_uid": "road-성북로161번길",
+        "tgt_name": "성북로161번길",
+        "polyline_dist_m": 14.7,
+        "rank_in_topk": 1,
+        "top1_uid": "road-성북로161번길",
+        "top1_name": "성북로161번길",
+        "top1_dist_m": 14.7,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005PVEO1",
+        "tgt_uid": "road-진잠로124번길",
+        "tgt_name": "진잠로124번길",
+        "polyline_dist_m": 107.1,
+        "rank_in_topk": null,
+        "top1_uid": "road-진잠로106번길",
+        "top1_name": "진잠로106번길",
+        "top1_dist_m": 27.4,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD01000000FO5K02",
+        "tgt_uid": "road-원계산로77번길",
+        "tgt_name": "원계산로77번길",
+        "polyline_dist_m": 175.9,
+        "rank_in_topk": null,
+        "top1_uid": "road-교촌대정로",
+        "top1_name": "교촌대정로",
+        "top1_dist_m": 40.3,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD01000000E53D3C",
+        "tgt_uid": "road-관용로",
+        "tgt_name": "관용로",
+        "polyline_dist_m": 34.3,
+        "rank_in_topk": 1,
+        "top1_uid": "road-관용로",
+        "top1_name": "관용로",
+        "top1_dist_m": 34.3,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005P37LZ",
+        "tgt_uid": "road-테크노1로",
+        "tgt_name": "테크노1로",
+        "polyline_dist_m": 188.3,
+        "rank_in_topk": 3,
+        "top1_uid": "road-테크노2로",
+        "top1_name": "테크노2로",
+        "top1_dist_m": 21.0,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005Q982O",
+        "tgt_uid": "road-유성대로710번길",
+        "tgt_name": "유성대로710번길",
+        "polyline_dist_m": 32.0,
+        "rank_in_topk": 1,
+        "top1_uid": "road-유성대로710번길",
+        "top1_name": "유성대로710번길",
+        "top1_dist_m": 32.0,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000FOBPCP",
+        "tgt_uid": "road-월드컵대로245번길",
+        "tgt_name": "월드컵대로245번길",
+        "polyline_dist_m": 164.8,
+        "rank_in_topk": null,
+        "top1_uid": "road-유성대로",
+        "top1_name": "유성대로",
+        "top1_dist_m": 82.5,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD010000005PUTH8",
+        "tgt_uid": "road-도안남로",
+        "tgt_name": "도안남로",
+        "polyline_dist_m": 197.2,
+        "rank_in_topk": 1,
+        "top1_uid": "road-도안남로",
+        "top1_name": "도안남로",
+        "top1_dist_m": 197.2,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005PP3OK",
+        "tgt_uid": "road-성북로316번길",
+        "tgt_name": "성북로316번길",
+        "polyline_dist_m": 25.8,
+        "rank_in_topk": 1,
+        "top1_uid": "road-성북로316번길",
+        "top1_name": "성북로316번길",
+        "top1_dist_m": 25.8,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000CQOAGQ",
+        "tgt_uid": "road-용계로41번길",
+        "tgt_name": "용계로41번길",
+        "polyline_dist_m": 63.9,
+        "rank_in_topk": 2,
+        "top1_uid": "road-용계로",
+        "top1_name": "용계로",
+        "top1_dist_m": 49.6,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005RIS6M",
+        "tgt_uid": "road-은구비서로24번길",
+        "tgt_name": "은구비서로24번길",
+        "polyline_dist_m": 275.2,
+        "rank_in_topk": null,
+        "top1_uid": "road-북유성대로",
+        "top1_name": "북유성대로",
+        "top1_dist_m": 89.7,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD010000005QVMH3",
+        "tgt_uid": "road-대덕대로560번길",
+        "tgt_name": "대덕대로560번길",
+        "polyline_dist_m": 33.1,
+        "rank_in_topk": 1,
+        "top1_uid": "road-대덕대로560번길",
+        "top1_name": "대덕대로560번길",
+        "top1_dist_m": 33.1,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000FOCHX3",
+        "tgt_uid": "road-문지로299번길",
+        "tgt_name": "문지로299번길",
+        "polyline_dist_m": 176.3,
+        "rank_in_topk": 3,
+        "top1_uid": "road-문지로",
+        "top1_name": "문지로",
+        "top1_dist_m": 49.7,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005Q6UV0",
+        "tgt_uid": "road-갑동로25번길",
+        "tgt_name": "갑동로25번길",
+        "polyline_dist_m": 151.4,
+        "rank_in_topk": 1,
+        "top1_uid": "road-갑동로25번길",
+        "top1_name": "갑동로25번길",
+        "top1_dist_m": 151.4,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000E53JFU",
+        "tgt_uid": "road-유성대로1366번길",
+        "tgt_name": "유성대로1366번길",
+        "polyline_dist_m": 192.1,
+        "rank_in_topk": null,
+        "top1_uid": "road-당진영덕고속도로",
+        "top1_name": "당진영덕고속도로",
+        "top1_dist_m": 36.4,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD010000005RHOOZ",
+        "tgt_uid": "road-죽동로279번길",
+        "tgt_name": "죽동로279번길",
+        "polyline_dist_m": 395.9,
+        "rank_in_topk": 3,
+        "top1_uid": "road-유성대로",
+        "top1_name": "유성대로",
+        "top1_dist_m": 105.6,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000E54YB6",
+        "tgt_uid": "road-테크노1로",
+        "tgt_name": "테크노1로",
+        "polyline_dist_m": 17.8,
+        "rank_in_topk": 1,
+        "top1_uid": "road-테크노1로",
+        "top1_name": "테크노1로",
+        "top1_dist_m": 17.8,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005RS5GJ",
+        "tgt_uid": "road-진잠로124번길",
+        "tgt_name": "진잠로124번길",
+        "polyline_dist_m": 26.2,
+        "rank_in_topk": 1,
+        "top1_uid": "road-진잠로124번길",
+        "top1_name": "진잠로124번길",
+        "top1_dist_m": 26.2,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005RYNNE",
+        "tgt_uid": "road-유성대로668번길",
+        "tgt_name": "유성대로668번길",
+        "polyline_dist_m": 64.9,
+        "rank_in_topk": null,
+        "top1_uid": "road-계룡로32번길",
+        "top1_name": "계룡로32번길",
+        "top1_dist_m": 10.1,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD010000005PV0CB",
+        "tgt_uid": "road-진잠로140번길",
+        "tgt_name": "진잠로140번길",
+        "polyline_dist_m": 91.1,
+        "rank_in_topk": null,
+        "top1_uid": "road-진잠로106번길",
+        "top1_name": "진잠로106번길",
+        "top1_dist_m": 18.0,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD01000000CQL9GM",
+        "tgt_uid": "road-진잠로42번길",
+        "tgt_name": "진잠로42번길",
+        "polyline_dist_m": 55.3,
+        "rank_in_topk": 1,
+        "top1_uid": "road-진잠로42번길",
+        "top1_name": "진잠로42번길",
+        "top1_dist_m": 55.3,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005RZ3DL",
+        "tgt_uid": "road-노은서로250번길",
+        "tgt_name": "노은서로250번길",
+        "polyline_dist_m": 126.1,
+        "rank_in_topk": 2,
+        "top1_uid": "road-노은서로",
+        "top1_name": "노은서로",
+        "top1_dist_m": 37.5,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005RHVFX",
+        "tgt_uid": "road-죽동로297번길",
+        "tgt_name": "죽동로297번길",
+        "polyline_dist_m": 101.7,
+        "rank_in_topk": 3,
+        "top1_uid": "road-죽동로",
+        "top1_name": "죽동로",
+        "top1_dist_m": 45.3,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005P5Z4C",
+        "tgt_uid": "road-대금로153번길",
+        "tgt_name": "대금로153번길",
+        "polyline_dist_m": 13.4,
+        "rank_in_topk": 2,
+        "top1_uid": "road-대금로",
+        "top1_name": "대금로",
+        "top1_dist_m": 4.6,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005Q8IMH",
+        "tgt_uid": "road-월드컵대로245번길",
+        "tgt_name": "월드컵대로245번길",
+        "polyline_dist_m": 126.7,
+        "rank_in_topk": null,
+        "top1_uid": "road-유성대로",
+        "top1_name": "유성대로",
+        "top1_dist_m": 38.3,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD01000000FODXQD",
+        "tgt_uid": "road-구룡길",
+        "tgt_name": "구룡길",
+        "polyline_dist_m": 19.5,
+        "rank_in_topk": 2,
+        "top1_uid": "road-과학누리1길",
+        "top1_name": "과학누리1길",
+        "top1_dist_m": 15.8,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005S0EWH",
+        "tgt_uid": "road-원신흥남로",
+        "tgt_name": "원신흥남로",
+        "polyline_dist_m": 54.3,
+        "rank_in_topk": 3,
+        "top1_uid": "road-원신흥남로41번길",
+        "top1_name": "원신흥남로41번길",
+        "top1_dist_m": 11.2,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005QBELF",
+        "tgt_uid": "road-온천서로",
+        "tgt_name": "온천서로",
+        "polyline_dist_m": 41.6,
+        "rank_in_topk": 2,
+        "top1_uid": "road-유성대로736번길",
+        "top1_name": "유성대로736번길",
+        "top1_dist_m": 33.8,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000E59YWW",
+        "tgt_uid": "road-대정로28번안길",
+        "tgt_name": "대정로28번안길",
+        "polyline_dist_m": 35.7,
+        "rank_in_topk": 1,
+        "top1_uid": "road-대정로28번안길",
+        "top1_name": "대정로28번안길",
+        "top1_dist_m": 35.7,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000FOBU9R",
+        "tgt_uid": "road-월드컵대로51번길",
+        "tgt_name": "월드컵대로51번길",
+        "polyline_dist_m": 211.2,
+        "rank_in_topk": 3,
+        "top1_uid": "road-호남지선고속도로",
+        "top1_name": "호남지선고속도로",
+        "top1_dist_m": 59.9,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005QMG4B",
+        "tgt_uid": "road-학하동로63번길",
+        "tgt_name": "학하동로63번길",
+        "polyline_dist_m": 10.5,
+        "rank_in_topk": 2,
+        "top1_uid": "road-진잠옛로",
+        "top1_name": "진잠옛로",
+        "top1_dist_m": 9.2,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005QAO9C",
+        "tgt_uid": "road-박산로46번길",
+        "tgt_name": "박산로46번길",
+        "polyline_dist_m": 41.4,
+        "rank_in_topk": 2,
+        "top1_uid": "road-박산로",
+        "top1_name": "박산로",
+        "top1_dist_m": 12.7,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005OZNLA",
+        "tgt_uid": "road-테크노8로",
+        "tgt_name": "테크노8로",
+        "polyline_dist_m": 75.9,
+        "rank_in_topk": 2,
+        "top1_uid": "road-테크노중앙로",
+        "top1_name": "테크노중앙로",
+        "top1_dist_m": 24.1,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005Q8VZ7",
+        "tgt_uid": "road-은구비남로7번길",
+        "tgt_name": "은구비남로7번길",
+        "polyline_dist_m": 30.0,
+        "rank_in_topk": 2,
+        "top1_uid": "road-노은서로142번길",
+        "top1_name": "노은서로142번길",
+        "top1_dist_m": 12.2,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005QKF48",
+        "tgt_uid": "road-원계산로77번길",
+        "tgt_name": "원계산로77번길",
+        "polyline_dist_m": 33.1,
+        "rank_in_topk": 2,
+        "top1_uid": "road-교촌대정로203번길",
+        "top1_name": "교촌대정로203번길",
+        "top1_dist_m": 18.0,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005RYO6Y",
+        "tgt_uid": "road-갑동로8번길",
+        "tgt_name": "갑동로8번길",
+        "polyline_dist_m": 49.2,
+        "rank_in_topk": 1,
+        "top1_uid": "road-갑동로8번길",
+        "top1_name": "갑동로8번길",
+        "top1_dist_m": 49.2,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005QD44Q",
+        "tgt_uid": "road-반석동로40번길",
+        "tgt_name": "반석동로40번길",
+        "polyline_dist_m": 23.1,
+        "rank_in_topk": 1,
+        "top1_uid": "road-반석동로40번길",
+        "top1_name": "반석동로40번길",
+        "top1_dist_m": 23.1,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000CQO0LL",
+        "tgt_uid": "road-현충원로485번길",
+        "tgt_name": "현충원로485번길",
+        "polyline_dist_m": 31.6,
+        "rank_in_topk": 1,
+        "top1_uid": "road-현충원로485번길",
+        "top1_name": "현충원로485번길",
+        "top1_dist_m": 31.6,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005Q86TC",
+        "tgt_uid": "road-현충원로455번길",
+        "tgt_name": "현충원로455번길",
+        "polyline_dist_m": 6.1,
+        "rank_in_topk": 1,
+        "top1_uid": "road-현충원로455번길",
+        "top1_name": "현충원로455번길",
+        "top1_dist_m": 6.1,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005PJ4D4",
+        "tgt_uid": "road-테크노11로",
+        "tgt_name": "테크노11로",
+        "polyline_dist_m": 260.8,
+        "rank_in_topk": 3,
+        "top1_uid": "road-테크노2로",
+        "top1_name": "테크노2로",
+        "top1_dist_m": 13.1,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000E520C7",
+        "tgt_uid": "road-신성서로",
+        "tgt_name": "신성서로",
+        "polyline_dist_m": 72.1,
+        "rank_in_topk": null,
+        "top1_uid": "road-신성로61번길",
+        "top1_name": "신성로61번길",
+        "top1_dist_m": 16.9,
+        "verdict": "FAIL_NOT_NEAREST_AND_FAR"
+      },
+      {
+        "src_uid": "BLD01000000E58ZBB",
+        "tgt_uid": "road-세동로510번길",
+        "tgt_name": "세동로510번길",
+        "polyline_dist_m": 78.1,
+        "rank_in_topk": 1,
+        "top1_uid": "road-세동로510번길",
+        "top1_name": "세동로510번길",
+        "top1_dist_m": 78.1,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD01000000EP5T7I",
+        "tgt_uid": "road-대금로101번길",
+        "tgt_name": "대금로101번길",
+        "polyline_dist_m": 23.1,
+        "rank_in_topk": 1,
+        "top1_uid": "road-대금로101번길",
+        "top1_name": "대금로101번길",
+        "top1_dist_m": 23.1,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005RS5Z2",
+        "tgt_uid": "road-교촌로6번길",
+        "tgt_name": "교촌로6번길",
+        "polyline_dist_m": 75.4,
+        "rank_in_topk": 2,
+        "top1_uid": "road-진잠로",
+        "top1_name": "진잠로",
+        "top1_dist_m": 31.1,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005PVA09",
+        "tgt_uid": "road-원내로57번길",
+        "tgt_name": "원내로57번길",
+        "polyline_dist_m": 49.9,
+        "rank_in_topk": 3,
+        "top1_uid": "road-진잠로106번길",
+        "top1_name": "진잠로106번길",
+        "top1_dist_m": 11.7,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005RKIJR",
+        "tgt_uid": "road-과학로",
+        "tgt_name": "과학로",
+        "polyline_dist_m": 121.2,
+        "rank_in_topk": 1,
+        "top1_uid": "road-과학로",
+        "top1_name": "과학로",
+        "top1_dist_m": 121.2,
+        "verdict": "OK_NEAREST_AND_CLOSE"
+      },
+      {
+        "src_uid": "BLD010000005RZTFD",
+        "tgt_uid": "road-학하남로",
+        "tgt_name": "학하남로",
+        "polyline_dist_m": 15.9,
+        "rank_in_topk": 2,
+        "top1_uid": "road-학하로30번길",
+        "top1_name": "학하로30번길",
+        "top1_dist_m": 13.4,
+        "verdict": "OK_NOT_NEAREST_BUT_CLOSE"
+      }
+    ]
+  },
+  "colocated": {
+    "total": 50,
+    "verdicts": {
+      "OK_SHARED_PARCEL": 50,
+      "FAIL_NO_SHARED_PARCEL": 0,
+      "ERROR": 0
+    },
+    "precision": {
+      "successes": 50,
+      "wilson_95ci": [
+        1.0,
+        0.9286,
+        1.0
+      ]
+    },
+    "details": [
+      {
+        "src_uid": "BLD010000005RJNMY",
+        "tgt_uid": "BLD01000000E4YIRZ",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020013900106140000"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005QJCTT",
+        "tgt_uid": "BLD010000005QJCUU",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020010400100860012"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD01000000FOBV4N",
+        "tgt_uid": "BLD010000005RHD88",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020011700104790000"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD01000000E4XU0J",
+        "tgt_uid": "BLD01000000CQP5AG",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020012000110590001"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005RM833",
+        "tgt_uid": "BLD010000005RM844",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020011500104620000"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005S0MA3",
+        "tgt_uid": "BLD010000005QJX9U",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020010300101470002"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD01000000E55M7R",
+        "tgt_uid": "BLD010000005RE1K5",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020014100104640001"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005QK25W",
+        "tgt_uid": "BLD010000005QIV3L",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020010400100710036"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005RJI3A",
+        "tgt_uid": "BLD010000005RJQ6L",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020013200105460000"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD01000000E64IR7",
+        "tgt_uid": "BLD01000000CQORTK",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020012300100440000"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005OYFWC",
+        "tgt_uid": "BLD01000000E54MN6",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020014300109150000"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005RDL8C",
+        "tgt_uid": "BLD010000005RE7YP",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020014600112820000"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005RH9KG",
+        "tgt_uid": "BLD010000005RY3Y5",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020011100110240000"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005R9O25",
+        "tgt_uid": "BLD010000005RAZET",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020014200101400001"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005RHZ2O",
+        "tgt_uid": "BLD010000005RHZ5R",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020011700101550000"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005RL20T",
+        "tgt_uid": "BLD010000005RL1OG",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020012500101000000"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005RAL78",
+        "tgt_uid": "BLD010000005RAM68",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020014600108960000"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005PIKFL",
+        "tgt_uid": "BLD010000005PIKGM",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020014500106110000"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005RJK5E",
+        "tgt_uid": "BLD010000005RHM9I",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020012000110500000"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD01000000E56V93",
+        "tgt_uid": "BLD010000005RHB64",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020012000109190000"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005RIQES",
+        "tgt_uid": "BLD010000005RHBTR",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020012000108580000"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005RJC23",
+        "tgt_uid": "BLD010000005RJB77",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020013900106130000"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005RDBD7",
+        "tgt_uid": "BLD010000005RE2N9",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020014100104640001"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005Q87XH",
+        "tgt_uid": "BLD010000005Q880L",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020011200104310001"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005QLR9Q",
+        "tgt_uid": "BLD01000000E59U2Y",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020010300100470004"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005RBONS",
+        "tgt_uid": "BLD010000005RBOJO",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020014600108920000"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD01000000ETCLJX",
+        "tgt_uid": "BLD010000005RZTOM",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020010600107520003"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005RL9TT",
+        "tgt_uid": "BLD01000000E53GMY",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020012800100250015"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005RHA2Z",
+        "tgt_uid": "BLD010000005RH973",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020011100110210000"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005RBYM1",
+        "tgt_uid": "BLD01000000E52ER0",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020014700102000004"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD01000000E52QVG",
+        "tgt_uid": "BLD01000000E52QUF",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020014500105510001"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005Q8T5B",
+        "tgt_uid": "BLD01000000ETC0ZS",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020011800103080002"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD01000000E59RXQ",
+        "tgt_uid": "BLD010000005QKTEW",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020010400106430000"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD01000000E53VE5",
+        "tgt_uid": "BLD01000000E53VSJ",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020015200104300000"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005P30MT",
+        "tgt_uid": "BLD01000000E52RG2",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020014500106520000"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005RBOKP",
+        "tgt_uid": "BLD010000005RBOPU",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020014600108920000"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005PTNG0",
+        "tgt_uid": "BLD01000000FO5FA7",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020010100100410001"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD01000000E55MO8",
+        "tgt_uid": "BLD010000005PJ5C4",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020014300109240000"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005PSU6W",
+        "tgt_uid": "BLD010000005PSVOF",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020010700100810012"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005RHCKJ",
+        "tgt_uid": "BLD010000005RHW7Q",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020012100106880000"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005RBJ00",
+        "tgt_uid": "BLD010000005RBIGF",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020014000101030016"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "iot-OBJ023020000000013",
+        "tgt_uid": "BLD010000005RBEQL",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020014100104680000"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD01000000E55Y2Y",
+        "tgt_uid": "BLD010000005RE30N",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020014100104620004"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005RKUQA",
+        "tgt_uid": "BLD01000000E53N5O",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020012700104520000"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005RZV99",
+        "tgt_uid": "BLD01000000FO6SV6",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020011400105110000"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005RMU4Q",
+        "tgt_uid": "BLD010000005RMRFY",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020011500104870000"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD01000000E55O0M",
+        "tgt_uid": "BLD01000000E55O2O",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020014000101030022"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005RHJ7D",
+        "tgt_uid": "BLD010000005RHKHO",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020011100110210000"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005RLUBW",
+        "tgt_uid": "BLD01000000FO5FUR",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020010300103160001"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      },
+      {
+        "src_uid": "BLD010000005QSXMG",
+        "tgt_uid": "BLD010000005QSXNH",
+        "shared_parcel_count": 1,
+        "shared_parcels": [
+          "parcel-3020012700103800046"
+        ],
+        "verdict": "OK_SHARED_PARCEL"
+      }
+    ]
+  }
+}

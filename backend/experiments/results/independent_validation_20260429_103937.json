@@ -1,0 +1,133 @@
+{
+  "experiment": "independent_validation",
+  "addresses": [
+    "R1.3",
+    "R2.20"
+  ],
+  "timestamp": "2026-04-29T10:39:36.968870",
+  "csv_path": "C:/Users/User/Documents/Claude/Projects/geokg/k-GeoKG/backend/experiments/results/validation_sample_20260429_094606.csv",
+  "n_total_samples": 850,
+  "checks": {
+    "on_parcel_containment": {
+      "verdicts": {
+        "INSIDE": 44,
+        "OUTSIDE_BUT_NEAR": 6,
+        "OUTSIDE_FAR": 0,
+        "NO_POLYGON": 0
+      },
+      "n_evaluated": 50,
+      "successes": 44,
+      "wilson_95ci": [
+        0.88,
+        0.7619,
+        0.9438
+      ],
+      "outside_cases": [
+        {
+          "src_uid": "BLD01000000E5CGM7",
+          "tgt_uid": "parcel-3020011100104630043",
+          "src_pnu": "3020011100104630043",
+          "tgt_pnu": "3020011100104630043",
+          "verdict": "OUTSIDE_BUT_NEAR"
+        },
+        {
+          "src_uid": "BLD01000000FOC4SL",
+          "tgt_uid": "parcel-3020011200104750006",
+          "src_pnu": "3020011200104750006",
+          "tgt_pnu": "3020011200104750006",
+          "verdict": "OUTSIDE_BUT_NEAR"
+        },
+        {
+          "src_uid": "BLD01000000E534MM",
+          "tgt_uid": "parcel-3020015300100180003",
+          "src_pnu": "3020015300100180003",
+          "tgt_pnu": "3020015300100180003",
+          "verdict": "OUTSIDE_BUT_NEAR"
+        },
+        {
+          "src_uid": "BLD01000000FOEHLT",
+          "tgt_uid": "parcel-3020010900103190008",
+          "src_pnu": "3020010900103190008",
+          "tgt_pnu": "3020010900103190008",
+          "verdict": "OUTSIDE_BUT_NEAR"
+        },
+        {
+          "src_uid": "BLD01000000FO5B70",
+          "tgt_uid": "parcel-3020010400102820001",
+          "src_pnu": "3020010400102820001",
+          "tgt_pnu": "3020010400102820001",
+          "verdict": "OUTSIDE_BUT_NEAR"
+        },
+        {
+          "src_uid": "BLD010000005OY73B",
+          "tgt_uid": "parcel-3020014600105630003",
+          "src_pnu": "3020014600105630003",
+          "tgt_pnu": "3020014600105630003",
+          "verdict": "OUTSIDE_BUT_NEAR"
+        }
+      ]
+    },
+    "on_street_frontage": {
+      "verdicts": {
+        "WITHIN_FRONTAGE": 47,
+        "BEYOND_FRONTAGE": 3,
+        "NO_GEOMETRY": 0
+      },
+      "n_evaluated": 50,
+      "successes": 47,
+      "wilson_95ci": [
+        0.94,
+        0.8378,
+        0.9794
+      ],
+      "max_frontage_m": 200,
+      "beyond_frontage_cases": [
+        {
+          "src_uid": "BLD01000000CQP0AB",
+          "tgt_uid": "road-가정로",
+          "tgt_name": "가정로",
+          "frontage_dist_m": 284.2
+        },
+        {
+          "src_uid": "BLD010000005RHJ6C",
+          "tgt_uid": "road-도안동로",
+          "tgt_name": "도안동로",
+          "frontage_dist_m": 280.6
+        },
+        {
+          "src_uid": "BLD010000005RI0VJ",
+          "tgt_uid": "road-계룡로123번길",
+          "tgt_name": "계룡로123번길",
+          "frontage_dist_m": 218.5
+        }
+      ]
+    },
+    "same_dong_grid": {
+      "n_total": 100,
+      "within_typical": 98,
+      "diagonal_valid": 2,
+      "beyond_valid": 0,
+      "median_dist_m": 290.540102500861,
+      "max_dist_m": 608.2500356584117,
+      "wilson_95ci_typical": [
+        0.98,
+        0.93,
+        0.9945
+      ],
+      "far_cases": []
+    },
+    "nearest_shelter_geodesic": {
+      "n_total": 200,
+      "successes": 200,
+      "wilson_95ci": [
+        1.0,
+        0.9812,
+        1.0
+      ],
+      "mean_geodesic_m": 230.89,
+      "mean_haversine_m": 230.89,
+      "mean_abs_discrepancy_m": 0.3284,
+      "max_abs_discrepancy_m": 0.8823
+    }
+  }
+}

@@ -1,0 +1,347 @@
+{
+  "region": "sejong",
+  "region_label": "Sejong-si",
+  "area_km2": 465.0,
+  "population_estimate": 390000,
+  "metrics": {
+    "n_buildings": 27773,
+    "n_parcels": 206880,
+    "n_roads": 4201,
+    "n_intersections": 25639,
+    "n_auto_road_links": 53808,
+    "n_shelters": 874,
+    "n_transit": 1081,
+    "n_parks": 276,
+    "n_monitor": 218,
+    "entrance_match_count": 27332,
+    "entrance_match_rate_pct": 98.4,
+    "summary_attribute_match_count": 3886,
+    "summary_attribute_match_rate_pct": 14.0
+  },
+  "neo4j_stats": {
+    "node_count": 320863,
+    "relationship_count": 1402309,
+    "labels": [
+      "Building",
+      "Road",
+      "Vehicle",
+      "ParkingLot",
+      "ParkingSpace",
+      "Sensor",
+      "Camera",
+      "Tree",
+      "Facility",
+      "Pedestrian",
+      "Zone",
+      "Parcel",
+      "ThingsAddr",
+      "RoadIntersection",
+      "TrafficState",
+      "EnvironmentState",
+      "OccupancyState",
+      "EquipmentState",
+      "WeatherState",
+      "PositionChange",
+      "StatusChange",
+      "EnvironmentChange",
+      "MaintenanceEvent",
+      "AutoRoadLink"
+    ],
+    "relationship_types": [
+      "CONTAINS",
+      "HAS_STATE",
+      "ON_ROAD",
+      "ALONG",
+      "ON_PARCEL",
+      "FRONTS_ROAD",
+      "ALONG_ROAD",
+      "SAME_DONG",
+      "SAME_USAGE",
+      "MONITORS",
+      "SERVES",
+      "NEAR",
+      "NEAR_BUILDING",
+      "NEAREST_SHELTER",
+      "ACCESSIBLE_BY_TRANSIT",
+      "NEAR_PARK",
+      "NEAR_FACILITY",
+      "COLOCATED",
+      "ON_STREET",
+      "ADJACENT_TO"
+    ]
+  },
+  "timing_sec": {
+    "data_preparation_total": 346.76,
+    "neo4j_build_total": 1001.06,
+    "rule_engine": {
+      "rules": [
+        {
+          "rule_idx": 1,
+          "rel_type": "ON_PARCEL",
+          "strategy": "attribute_match",
+          "elapsed": 0.233,
+          "rels_created": 27673,
+          "source_labels": [
+            "Building"
+          ]
+        },
+        {
+          "rule_idx": 2,
+          "rel_type": "ON_STREET",
+          "strategy": "attribute_match",
+          "elapsed": 0.564,
+          "rels_created": 231373,
+          "source_labels": [
+            "Building"
+          ]
+        },
+        {
+          "rule_idx": 3,
+          "rel_type": "FRONTS_ROAD",
+          "strategy": "nearest",
+          "elapsed": 61.722,
+          "rels_created": 27773,
+          "source_labels": [
+            "Building"
+          ]
+        },
+        {
+          "rule_idx": 4,
+          "rel_type": "ALONG_ROAD",
+          "strategy": "nearest",
+          "elapsed": 61.949,
+          "rels_created": 28193,
+          "source_labels": [
+            "Vehicle",
+            "ParkingLot",
+            "ParkingSpace",
+            "Sensor",
+            "Camera",
+            "Tree",
+            "Facility",
+            "ThingsAddr",
+            "RoadIntersection"
+          ]
+        },
+        {
+          "rule_idx": 5,
+          "rel_type": "SAME_DONG",
+          "strategy": "same_attribute_cluster",
+          "elapsed": 2.36,
+          "rels_created": 121586,
+          "source_labels": [
+            "Building"
+          ]
+        },
+        {
+          "rule_idx": 6,
+          "rel_type": "SAME_USAGE",
+          "strategy": "same_attribute_cluster",
+          "elapsed": 2.042,
+          "rels_created": 114784,
+          "source_labels": [
+            "Building"
+          ]
+        },
+        {
+          "rule_idx": 7,
+          "rel_type": "MONITORS",
+          "strategy": "proximity",
+          "elapsed": 0.167,
+          "rels_created": 48,
+          "source_labels": [
+            "Sensor",
+            "Camera"
+          ]
+        },
+        {
+          "rule_idx": 8,
+          "rel_type": "SERVES",
+          "strategy": "proximity",
+          "elapsed": 0.086,
+          "rels_created": 144,
+          "source_labels": [
+            "Facility",
+            "ParkingLot"
+          ]
+        },
+        {
+          "rule_idx": 9,
+          "rel_type": "NEAR",
+          "strategy": "proximity",
+          "elapsed": 0.097,
+          "rels_created": 12,
+          "source_labels": [
+            "Tree"
+          ]
+        },
+        {
+          "rule_idx": 10,
+          "rel_type": "NEAR_BUILDING",
+          "strategy": "proximity",
+          "elapsed": 193.142,
+          "rels_created": 66924,
+          "source_labels": [
+            "Vehicle",
+            "ParkingSpace",
+            "ThingsAddr",
+            "RoadIntersection"
+          ]
+        },
+        {
+          "rule_idx": 11,
+          "rel_type": "ADJACENT_TO",
+          "strategy": "proximity",
+          "elapsed": 315.046,
+          "rels_created": 123031,
+          "source_labels": [
+            "Building"
+          ]
+        },
+        {
+          "rule_idx": 12,
+          "rel_type": "NEAREST_SHELTER",
+          "strategy": "proximity",
+          "elapsed": 7.256,
+          "rels_created": 46269,
+          "source_labels": [
+            "Building"
+          ]
+        },
+        {
+          "rule_idx": 13,
+          "rel_type": "ACCESSIBLE_BY_TRANSIT",
+          "strategy": "proximity",
+          "elapsed": 8.778,
+          "rels_created": 39520,
+          "source_labels": [
+            "Building"
+          ]
+        },
+        {
+          "rule_idx": 14,
+          "rel_type": "NEAR_PARK",
+          "strategy": "proximity",
+          "elapsed": 2.985,
+          "rels_created": 20504,
+          "source_labels": [
+            "Building"
+          ]
+        },
+        {
+          "rule_idx": 15,
+          "rel_type": "NEAR_FACILITY",
+          "strategy": "proximity",
+          "elapsed": 1.742,
+          "rels_created": 6414,
+          "source_labels": [
+            "ThingsAddr"
+          ]
+        },
+        {
+          "rule_idx": 16,
+          "rel_type": "ON_PARCEL",
+          "strategy": "attribute_prefix_proximity",
+          "elapsed": 0.017,
+          "rels_created": 0,
+          "source_labels": [
+            "Vehicle",
+            "ParkingLot",
+            "ParkingSpace",
+            "Sensor",
+            "Camera",
+            "Tree",
+            "Facility",
+            "ThingsAddr",
+            "RoadIntersection"
+          ]
+        },
+        {
+          "rule_idx": 17,
+          "rel_type": "COLOCATED",
+          "strategy": "through_relationship",
+          "elapsed": 0.82,
+          "rels_created": 9712,
+          "source_labels": [
+            "Building",
+            "Vehicle",
+            "ParkingLot",
+            "ParkingSpace",
+            "Sensor",
+            "Camera",
+            "Tree",
+            "Facility",
+            "ThingsAddr",
+            "RoadIntersection"
+          ]
+        },
+        {
+          "rule_idx": 18,
+          "rel_type": "COLOCATED",
+          "strategy": "through_relationship",
+          "elapsed": 9.276,
+          "rels_created": 506738,
+          "source_labels": [
+            "Building"
+          ]
+        }
+      ],
+      "strategies": {
+        "attribute_match": {
+          "elapsed": 0.7965118885040283,
+          "rels_created": 259046,
+          "rule_count": 2
+        },
+        "nearest": {
+          "elapsed": 123.67025995254517,
+          "rels_created": 55966,
+          "rule_count": 2
+        },
+        "same_attribute_cluster": {
+          "elapsed": 4.401777982711792,
+          "rels_created": 236370,
+          "rule_count": 2
+        },
+        "proximity": {
+          "elapsed": 529.2990970611572,
+          "rels_created": 302866,
+          "rule_count": 9
+        },
+        "attribute_prefix_proximity": {
+          "elapsed": 0.017291545867919922,
+          "rels_created": 0,
+          "rule_count": 1
+        },
+        "through_relationship": {
+          "elapsed": 10.095877170562744,
+          "rels_created": 516450,
+          "rule_count": 2
+        }
+      },
+      "total_elapsed": 668.465
+    },
+    "neo4j_build_breakdown": {
+      "node_building_insert": 2.6006741523742676,
+      "node_parcel_insert": 8.644472599029541,
+      "node_other_insert": 21.924116611480713,
+      "node_intersection_insert": 0.7707123756408691,
+      "node_autoroadlink_insert": 297.6195259094238,
+      "node_state_insert": 0.02615213394165039,
+      "seed_relationship_insert": 1.0077900886535645,
+      "rule_engine_total": 668.4665775299072,
+      "build_total": 1001.0600275993347
+    },
+    "data_preparation_breakdown": {
+      "1_parcels": 8.454959154129028,
+      "2_buildings": 332.04327297210693,
+      "3_entrances": 0.47560715675354004,
+      "4_roads": 0.266986608505249,
+      "5_road_network": 2.8250081539154053,
+      "6_safety": 0.02649712562561035,
+      "9_simulation": 0.0006003379821777344,
+      "10_seed_relationships": 0.4833958148956299,
+      "11_gsid": 2.1728615760803223,
+      "total": 346.749858379364
+    }
+  }
+}

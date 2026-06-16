@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoKG Model by KAIST CRC</title>
+    <link rel="stylesheet" href="/css/style.css?v=14">
+    <!-- Cesium JS -->
+    <script src="https://cesium.com/downloads/cesiumjs/releases/1.124/Build/Cesium/Cesium.js"></script>
+    <link href="https://cesium.com/downloads/cesiumjs/releases/1.124/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="header-left">
+            <h1>GeoKG Model by KAIST CRC</h1>
+            <label class="region-selector" title="Switch the active region (reloads the page)">
+                <span class="region-selector-label">Region:</span>
+                <select id="region-select">
+                    <option value="yuseong">유성구 (Yuseong)</option>
+                    <option value="sejong">세종시 (Sejong)</option>
+                </select>
+            </label>
+        </div>
+        <div class="header-center">
+            <button id="btn-kg-graph" class="btn btn-header btn-accent">KG Graph</button>
+            <button id="btn-kg-analysis" class="btn btn-header btn-accent">🔍 KG Analysis</button>
+            <button id="btn-use-cases" class="btn btn-header btn-accent">📋 Use Cases</button>
+            <button id="btn-reseed" class="btn btn-header btn-danger">Reseed Data</button>
+        </div>
+        <div class="header-right">
+            <span id="connection-status" class="status-badge offline">Disconnected</span>
+            <span id="entity-count" class="stat-badge">-- entities</span>
+            <span id="fps-counter" class="stat-badge">-- FPS</span>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div id="main-container">
+        <!-- Left Sidebar - KG Panel -->
+        <aside id="kg-panel" class="panel">
+            <div class="panel-header">
+                <h2>Knowledge Graph</h2>
+                <button id="btn-toggle-kg" class="btn-icon" title="Toggle">&#9776;</button>
+            </div>
+            <div class="panel-content">
+                <!-- KG Stats -->
+                <div id="kg-stats" class="section">
+                    <h3>Graph Statistics</h3>
+                    <div id="kg-stats-content">Loading...</div>
+                </div>
+                <!-- Entity List -->
+                <div id="entity-list-section" class="section">
+                    <h3>Entities</h3>
+                    <select id="entity-filter">
+                        <option value="">All Types</option>
+                        <option value="Building">Building</option>
+                        <option value="Road">Road</option>
+                        <option value="Vehicle">Vehicle</option>
+                        <option value="ParkingLot">ParkingLot</option>
+                        <option value="Sensor">Sensor</option>
+                        <option value="Camera">Camera</option>
+                        <option value="Tree">Tree</option>
+                        <option value="Facility">Facility</option>
+                        <option value="Parcel">Parcel</option>
+                        <option value="ThingsAddr">ThingsAddr</option>
+                    </select>
+                    <div id="entity-list"></div>
+                </div>
+                <!-- Relationships -->
+                <div id="relationship-section" class="section">
+                    <h3>Relationships</h3>
+                    <div id="relationship-list"></div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Center - Cesium 3D View -->
+        <div id="cesium-container"></div>
+
+        <!-- Right Sidebar - Dashboard -->
+        <aside id="dashboard-panel" class="panel">
+            <div class="panel-header">
+                <h2>Dashboard</h2>
+                <button id="btn-toggle-dash" class="btn-icon" title="Toggle">&#9776;</button>
+            </div>
+            <div class="panel-content">
+                <!-- Parking Status -->
+                <div id="parking-section" class="section">
+                    <h3>Parking Status</h3>
+                    <div id="parking-content"></div>
+                </div>
+                <!-- Environment -->
+                <div id="environment-section" class="section">
+                    <h3>Environment</h3>
+                    <div id="environment-content"></div>
+                </div>
+                <!-- Vehicle Count -->
+                <div id="vehicle-section" class="section">
+                    <h3>Vehicles</h3>
+                    <div id="vehicle-content"></div>
+                </div>
+                <!-- Camera Status -->
+                <div id="camera-section" class="section">
+                    <h3>Cameras</h3>
+                    <div id="camera-content"></div>
+                </div>
+                <!-- Entity Info (on click) -->
+                <div id="entity-info-section" class="section">
+                    <h3>Selected Entity</h3>
+                    <div id="entity-info-content">Click an entity on the map</div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- KG Analysis Modal -->
+    <div id="kg-analysis-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🔍 KG Analysis Console</h2>
+                <button id="modal-close" class="btn-icon">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Tab Navigation -->
+                <div class="analysis-tabs">
+                    <button class="tab-btn active" data-tab="tab-path">🔗 Path Finder</button>
+                    <button class="tab-btn" data-tab="tab-impact">💥 Impact</button>
+                    <button class="tab-btn" data-tab="tab-nearby">📍 Nearby</button>
+                    <button class="tab-btn" data-tab="tab-anomaly">⚠️ Anomaly</button>
+                    <button class="tab-btn" data-tab="tab-coverage">🛡️ 사각지대</button>
+                    <button class="tab-btn" data-tab="tab-road-impact">🚧 도로 영향</button>
+                    <button class="tab-btn" data-tab="tab-safety">🏥 안전</button>
+                    <button class="tab-btn" data-tab="tab-analytics">📊 Analytics</button>
+                    <button class="tab-btn" data-tab="tab-cypher">⌨️ Cypher</button>
+                    <button class="tab-btn" data-tab="tab-road-profile">🛣️ 도로 프로파일</button>
+                </div>
+
+                <!-- Path Finder Tab -->
+                <div id="tab-path" class="tab-panel active">
+                    <p class="tab-desc">Find the shortest spatial path between two entities. Enter GSID or uid.</p>
+                    <div class="input-row">
+                        <label>From (GSID): <input id="path-from" type="text" placeholder="e.g. BL-89C25901-G0-00-000001-5" /><button id="btn-pick-from" class="btn btn-pick" title="지도에서 출발지 클릭">🎯</button></label>
+                        <label>To (GSID): <input id="path-to" type="text" placeholder="e.g. OF-89C259AB-G0-00-000001-B" /><button id="btn-pick-to" class="btn btn-pick" title="지도에서 도착지 클릭">🎯</button></label>
+                        <label>Mode: <select id="path-mode">
+                            <option value="road_network" selected>도로 네트워크</option>
+                            <option value="spatial">Spatial Only</option>
+                            <option value="all">All Relations</option>
+                        </select></label>
+                        <button id="btn-find-path" class="btn btn-accent">Find Path</button>
+                    </div>
+                    <div id="path-result" class="result-area"></div>
+                </div>
+
+                <!-- Impact Analysis Tab -->
+                <div id="tab-impact" class="tab-panel">
+                    <p class="tab-desc">엔티티 변경 시 영향 범위를 관계 유형별로 추적합니다.</p>
+                    <div class="input-row">
+                        <label>Entity: <input id="impact-uid" type="text" placeholder="GSID or uid" /></label>
+                        <label>Depth: <select id="impact-depth">
+                            <option value="1">1 hop</option>
+                            <option value="2" selected>2 hops</option>
+                            <option value="3">3 hops</option>
+                        </select></label>
+                        <label>유형: <select id="impact-type">
+                            <option value="all" selected>전체</option>
+                            <option value="infrastructure">🏗️ 인프라</option>
+                            <option value="safety">🛡️ 안전</option>
+                            <option value="administrative">🏛️ 행정</option>
+                        </select></label>
+                        <button id="btn-impact" class="btn btn-accent">Analyze</button>
+                    </div>
+                    <div id="impact-result" class="result-area"></div>
+                </div>
+
+                <!-- Nearby Tab -->
+                <div id="tab-nearby" class="tab-panel">
+                    <p class="tab-desc">Find entities within a given radius of a selected entity. Enter GSID or uid.</p>
+                    <div class="input-row">
+                        <label>Entity (GSID): <input id="nearby-uid" type="text" placeholder="e.g. BL-89C25855-G0-00-000001-U" /></label>
+                        <label>Radius: <select id="nearby-radius">
+                            <option value="100">100m</option>
+                            <option value="200" selected>200m</option>
+                            <option value="500">500m</option>
+                        </select></label>
+                        <button id="btn-nearby" class="btn btn-accent">Search</button>
+                    </div>
+                    <div id="nearby-result" class="result-area"></div>
+                </div>
+
+                <!-- Anomaly Trace Tab -->
+                <div id="tab-anomaly" class="tab-panel">
+                    <p class="tab-desc">Set sensor thresholds and detect anomalies. Affected buildings/zones are traced and visualized.</p>
+                    <div class="threshold-grid">
+                        <label>🌡️ Temp &gt; <input id="thresh-temp" type="number" value="30" step="1" class="thresh-input" />°C</label>
+                        <label>🔊 Noise &gt; <input id="thresh-noise" type="number" value="70" step="5" class="thresh-input" />dB</label>
+                        <label>💨 AQI &gt; <input id="thresh-aqi" type="number" value="100" step="10" class="thresh-input" /></label>
+                        <label>💧 Humidity &gt; <input id="thresh-humidity" type="number" value="80" step="5" class="thresh-input" />%</label>
+                    </div>
+                    <div class="input-row" style="margin-top:8px;">
+                        <button id="btn-anomaly" class="btn btn-accent">Detect &amp; Visualize</button>
+                    </div>
+                    <div id="anomaly-result" class="result-area"></div>
+                </div>
+
+                <!-- Coverage Dead Zone Tab -->
+                <div id="tab-coverage" class="tab-panel">
+                    <p class="tab-desc">대피시설/대중교통/공원에 접근 불가능한 건축물(사각지대)을 식별합니다.</p>
+                    <div class="input-row">
+                        <label>시설유형: <select id="coverage-type">
+                            <option value="shelter" selected>대피시설</option>
+                            <option value="transit">대중교통</option>
+                            <option value="park">공원</option>
+                            <option value="all">전체 (3가지 모두 없음)</option>
+                        </select></label>
+                        <label>행정동: <select id="coverage-dong">
+                            <option value="">전체</option>
+                        </select></label>
+                        <button id="btn-coverage" class="btn btn-accent">분석 실행</button>
+                    </div>
+                    <div id="coverage-result" class="result-area"></div>
+                </div>
+
+                <!-- Road Closure Impact Tab -->
+                <div id="tab-road-impact" class="tab-panel">
+                    <p class="tab-desc">도로 폐쇄 시 영향받는 모든 시설물을 분석합니다. 대안 도로 유무도 파악합니다.</p>
+                    <div class="input-row">
+                        <label>도로 선택: <select id="road-select">
+                            <option value="">-- 도로를 선택하세요 --</option>
+                        </select></label>
+                        <button id="btn-road-impact" class="btn btn-accent">영향 분석</button>
+                    </div>
+                    <div id="road-impact-result" class="result-area"></div>
+                </div>
+
+                <!-- Safety Profile Tab -->
+                <div id="tab-safety" class="tab-panel">
+                    <p class="tab-desc">특정 건물/시설의 종합 안전 프로파일을 분석합니다. KG의 모든 관계를 활용합니다.</p>
+                    <div class="input-row">
+                        <label>Entity: <input id="safety-uid" type="text" placeholder="GSID or uid" /></label>
+                        <button id="btn-safety" class="btn btn-accent">프로파일 조회</button>
+                    </div>
+                    <div id="safety-result" class="result-area"></div>
+                </div>
+
+                <!-- Analytics Tab -->
+                <div id="tab-analytics" class="tab-panel">
+                    <p class="tab-desc">행정동별 인프라 비교, KG 연결성을 분석합니다.</p>
+                    <div class="input-row">
+                        <label>분석 유형: <select id="analytics-mode">
+                            <option value="dong" selected>🏘️ 행정동 인프라 비교</option>
+                            <option value="connectivity">🔗 KG 연결성 분석</option>
+                        </select></label>
+                        <span id="analytics-dong-controls" class="analytics-sub-controls">
+                            <label>지표: <select id="analytics-metric">
+                                <option value="overall" selected>전체 종합</option>
+                                <option value="shelter">🛡️ 대피시설</option>
+                                <option value="transit">🚌 대중교통</option>
+                                <option value="park">🌳 공원/녹지</option>
+                                <option value="monitoring">📡 모니터링</option>
+                                <option value="road">🛣️ 도로 접근</option>
+                            </select></label>
+                        </span>
+                        <span id="analytics-conn-controls" class="analytics-sub-controls" style="display:none;">
+                            <label>분석: <select id="analytics-conn-type">
+                                <option value="density" selected>관계 밀도</option>
+                                <option value="isolated">고립 노드</option>
+                                <option value="patterns">연결 패턴</option>
+                            </select></label>
+                            <label id="analytics-max-deg-wrap" style="display:none;">최대 차수: <select id="analytics-max-degree">
+                                <option value="0">0 (완전 고립)</option>
+                                <option value="2" selected>2 이하</option>
+                                <option value="5">5 이하</option>
+                            </select></label>
+                        </span>
+                        <button id="btn-analytics" class="btn btn-accent">분석 실행</button>
+                    </div>
+                    <div id="analytics-result" class="result-area"></div>
+                </div>
+
+                <!-- Cypher Tab -->
+                <div id="tab-cypher" class="tab-panel">
+                    <p class="tab-desc">Run custom Cypher queries (read-only) against the Knowledge Graph.</p>
+                    <textarea id="cypher-input" rows="4" placeholder="MATCH (n:Building) RETURN n.gsid, n.name, n.subtype LIMIT 10"></textarea>
+                    <div class="input-row">
+                        <button id="btn-cypher" class="btn btn-accent">Execute</button>
+                        <span class="cypher-hint">Read-only MATCH queries only</span>
+                    </div>
+                    <div id="cypher-result" class="result-area"></div>
+                </div>
+
+                <!-- Road Profile Tab -->
+                <div id="tab-road-profile" class="tab-panel">
+                    <p class="tab-desc">도로명주소 선형참조 모델 — 건물번호 기반 좌표 추정 및 도로 프로파일 분석</p>
+
+                    <!-- Road Profile Controls -->
+                    <div class="input-row">
+                        <label>도로 선택:
+                            <select id="road-profile-select">
+                                <option value="">-- 도로를 선택하세요 --</option>
+                            </select>
+                        </label>
+                        <button id="btn-road-profile-load" class="btn btn-accent">프로파일 조회</button>
+                        <button id="btn-road-profile-map" class="btn" title="선택한 도로를 지도에 표시">🗺️ 지도 표시</button>
+                    </div>
+
+                    <!-- Profile Summary Cards -->
+                    <div id="road-profile-summary" class="rp-summary" style="display:none;">
+                        <div class="rp-card">
+                            <div class="rp-card-label">R² (적합도)</div>
+                            <div class="rp-card-value" id="rp-r-squared">—</div>
+                            <div class="rp-card-bar"><div class="rp-card-bar-fill" id="rp-r2-bar"></div></div>
+                        </div>
+                        <div class="rp-card">
+                            <div class="rp-card-label">미터/번호</div>
+                            <div class="rp-card-value" id="rp-mpu">—</div>
+                        </div>
+                        <div class="rp-card">
+                            <div class="rp-card-label">건물 수</div>
+                            <div class="rp-card-value" id="rp-bldg-count">—</div>
+                        </div>
+                        <div class="rp-card">
+                            <div class="rp-card-label">번호 범위</div>
+                            <div class="rp-card-value" id="rp-num-range">—</div>
+                        </div>
+                        <div class="rp-card">
+                            <div class="rp-card-label">도로 유형</div>
+                            <div class="rp-card-value" id="rp-road-type">—</div>
+                        </div>
+                        <div class="rp-card">
+                            <div class="rp-card-label">잔차 표준편차</div>
+                            <div class="rp-card-value" id="rp-residual">—</div>
+                        </div>
+                    </div>
+
+                    <!-- Road Entities (Left/Right) -->
+                    <div id="road-profile-entities" class="rp-entities-wrap" style="display:none;">
+                        <h4 class="rp-section-title">📍 도로 양측 엔티티</h4>
+                        <div class="rp-sides">
+                            <div class="rp-side">
+                                <div class="rp-side-header rp-side-left">◀ 좌측 (홀수)</div>
+                                <div id="rp-left-list" class="rp-entity-list"></div>
+                            </div>
+                            <div class="rp-side">
+                                <div class="rp-side-header rp-side-right">우측 (짝수) ▶</div>
+                                <div id="rp-right-list" class="rp-entity-list"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="rp-divider">
+
+                    <!-- Geocoding Tool -->
+                    <h4 class="rp-section-title">🎯 선형참조 좌표 추정</h4>
+                    <p class="tab-desc" style="margin-bottom:8px;">도로명 + 건물본번으로 좌표를 추정합니다.</p>
+                    <div class="input-row">
+                        <label>도로명: <input id="rp-geocode-road" type="text" placeholder="예: 대학로" /></label>
+                        <label>건물본번: <input id="rp-geocode-num" type="number" placeholder="예: 291" min="1" /></label>
+                        <button id="btn-rp-geocode" class="btn btn-accent">좌표 추정</button>
+                    </div>
+                    <div id="rp-geocode-result" class="result-area"></div>
+
+                    <!-- Main result area -->
+                    <div id="road-profile-result" class="result-area"></div>
+                </div>
+            </div>
+            <div class="modal-resize-handle"></div>
+        </div>
+    </div>
+
+    <!-- Use Cases Modal -->
+    <div id="use-cases-modal" class="modal hidden">
+        <div class="modal-content" style="max-width:700px;">
+            <div class="modal-header">
+                <h2>📋 Key Capabilities & Use Cases</h2>
+                <button id="use-cases-close" class="btn-icon">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="uc-intro">GeoKG 기반 디지털 트윈 시스템의 핵심 기능과 차별점입니다.</p>
+
+                <!-- A: Cascade Impact Analysis -->
+                <div class="uc-accordion-item">
+                    <div class="uc-accordion-header">
+                        <span class="uc-icon">💥</span>
+                        <span class="uc-title">연쇄 영향도 분석 (Cascade Impact Analysis)</span>
+                        <span class="uc-chevron">&#9660;</span>
+                    </div>
+                    <div class="uc-accordion-body">
+                        <div class="uc-content">
+                            <p>한 entity 변경 시 N-hop 관계를 따라 영향받는 모든 entity를 자동으로 추적합니다.</p>
+                            <div class="uc-example">
+                                <strong>예시:</strong> 6th Ave 수도관 파열 →<br>
+                                Road(6th Ave) → ALONG → Facility(수도관)<br>
+                                &nbsp;&nbsp;→ ADJACENT_TO → Building(BoA Tower)<br>
+                                &nbsp;&nbsp;→ MONITORS ← Sensor(온도)<br>
+                                그래프 탐색 한 번으로 연쇄 영향 즉시 파악
+                            </div>
+                            <p class="uc-link">🔍 <em>KG Analysis → Impact Analysis</em> 탭에서 실시간 확인 가능</p>
+                            <div class="uc-advancement">
+                                정적 관계 모델에서 벗어나, 동적 이벤트 전파와 실시간 N-hop 영향도 시각화를 구현. 기존 SQL JOIN으로 복잡했던 연쇄 분석을 그래프 패턴 매칭으로 단순화.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- B: GSID Spatial Identification -->
+                <div class="uc-accordion-item">
+                    <div class="uc-accordion-header">
+                        <span class="uc-icon">🌐</span>
+                        <span class="uc-title">GSID 공간 식별 체계 (Spatial Identification)</span>
+                        <span class="uc-chevron">&#9660;</span>
+                    </div>
+                    <div class="uc-accordion-body">
+                        <div class="uc-content">
+                            <p>S2 Cell 기반 글로벌 고유 식별자(GSID v7.0)로 모든 entity를 공간적으로 인코딩합니다.</p>
+                            <div class="uc-example">
+                                <strong>형식:</strong> <code>BL-89C25901-G0-00-000001-5</code><br>
+                                도메인(2) - S2Cell(8) - 고도(2) - 세대(2) - 일련번호(6) - 체크섬(1)<br><br>
+                                <strong>도메인 매핑:</strong> BL=Building, RC=Road, OM=Vehicle, OF=Sensor/Camera, NT=Tree, ZU=Zone
+                            </div>
+                            <p>도시 간 데이터 통합 시 매핑 테이블이 불필요하며, Luhn mod-36 체크섬으로 데이터 무결성을 보장합니다.</p>
+                            <div class="uc-advancement">
+                                독자적 GSID 체계를 설계. S2 Geometry 기반 공간 파티셔닝, 체크섬 검증, 계층적 SubType 분류까지 포함하여 글로벌 스케일 데이터 통합 가능.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- C: Real-time State Tracking -->
+                <div class="uc-accordion-item">
+                    <div class="uc-accordion-header">
+                        <span class="uc-icon">⚡</span>
+                        <span class="uc-title">실시간 상태 추적 (Real-time State Tracking)</span>
+                        <span class="uc-chevron">&#9660;</span>
+                    </div>
+                    <div class="uc-accordion-body">
+                        <div class="uc-content">
+                            <p>WebSocket 기반으로 센서, 차량, 주차장 상태를 실시간 업데이트합니다.</p>
+                            <div class="uc-example">
+                                <strong>동작 흐름:</strong><br>
+                                센서값 변경 → WebSocket 이벤트 → KG State Domain(SO) 업데이트<br>
+                                → 3D 뷰 시각화 반영 + 대시보드 수치 갱신 (동시)
+                            </div>
+                            <p>State Domain(SO)이 시간적 변화 이력을 관리하여, 과거 상태 추적 및 트렌드 분석이 가능합니다.</p>
+                            <div class="uc-advancement">
+                                기존 배치 기반 정적 KG 업데이트 방식과 달리, WebSocket 스트리밍으로 실시간 Digital Twin을 구현. 센서→KG→시각화 파이프라인이 자동으로 동기화.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- D: Spatial-Semantic Query -->
+                <div class="uc-accordion-item">
+                    <div class="uc-accordion-header">
+                        <span class="uc-icon">🔎</span>
+                        <span class="uc-title">공간-시맨틱 통합 쿼리 (Spatial-Semantic Query)</span>
+                        <span class="uc-chevron">&#9660;</span>
+                    </div>
+                    <div class="uc-accordion-body">
+                        <div class="uc-content">
+                            <p>Cypher 기반 그래프 패턴 매칭으로 공간과 의미를 동시에 쿼리합니다.</p>
+                            <div class="uc-example">
+                                <strong>예시:</strong> "42nd St에 있는 bus 근처 카메라"<br>
+                                <code>MATCH (v:Vehicle)-[:ON_ROAD]->(r:Road), (c:Camera)-[:ALONG]->(r) WHERE r.name='West 42nd Street' RETURN c, v</code><br><br>
+                                SQL: 3-4개 테이블 JOIN 필요 → Cypher: 패턴 매칭 한 줄
+                            </div>
+                            <p class="uc-link">🔍 <em>KG Analysis → Cypher</em> 탭에서 직접 실행 가능</p>
+                            <div class="uc-advancement">
+                                이론적 쿼리 모델을 Neo4j Cypher 엔진으로 구현. GSID 기반 검색과 결합하여 공간+시맨틱+식별자 3중 쿼리 지원.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- E: Three-Domain Ontology -->
+                <div class="uc-accordion-item">
+                    <div class="uc-accordion-header">
+                        <span class="uc-icon">🏗️</span>
+                        <span class="uc-title">3-Domain 온톨로지 (Three-Domain Ontology)</span>
+                        <span class="uc-chevron">&#9660;</span>
+                    </div>
+                    <div class="uc-accordion-body">
+                        <div class="uc-content">
+                            <p>Entity(EO), State(SO), Change(CO) 3단계 도메인 모델로 도시 장면을 체계적으로 표현합니다.</p>
+                            <div class="uc-example">
+                                <strong>Entity Domain (EO):</strong> Building, Road, Vehicle, ParkingLot, ParkingSpace, Sensor, Camera, Tree, Facility, Zone — 10개 타입<br><br>
+                                <strong>State Domain (SO):</strong> TrafficState, EnvironmentState, OccupancyState, EquipmentState, WeatherState — 5개 타입<br><br>
+                                <strong>Change Domain (CO):</strong> PositionChange, StatusChange, EnvironmentChange, MaintenanceEvent — 4개 타입<br><br>
+                                <strong>관계:</strong> CONTAINS, ADJACENT_TO, CONNECTED_TO, NEAR, ON_ROAD, ALONG, MONITORS, SERVES, HAS_STATE — 9개 관계 타입
+                            </div>
+                            <div class="uc-advancement">
+                                개념적 온톨로지(Ont = &lt;CO, EO, SO&gt;)를 Neo4j 그래프 DB에 완전히 구현. 제약조건, 인덱스, GSID 통합까지 포함한 Production-ready 스키마.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- F: Application Domains -->
+                <div class="uc-accordion-item">
+                    <div class="uc-accordion-header">
+                        <span class="uc-icon">🚀</span>
+                        <span class="uc-title">활용 분야 (Application Domains)</span>
+                        <span class="uc-chevron">&#9660;</span>
+                    </div>
+                    <div class="uc-accordion-body">
+                        <div class="uc-content">
+                            <div class="uc-domains">
+                                <div class="uc-domain-card">
+                                    <strong>🏙️ 스마트시티 운영</strong>
+                                    <p>실시간 도시 인프라 모니터링, 센서 이상감지, 자원 최적화</p>
+                                </div>
+                                <div class="uc-domain-card">
+                                    <strong>📐 도시 계획</strong>
+                                    <p>건물/도로/시설물 간 관계 분석으로 신규 개발 영향 시뮬레이션</p>
+                                </div>
+                                <div class="uc-domain-card">
+                                    <strong>🚨 재난 대응</strong>
+                                    <p>연쇄 영향도 분석으로 재난 시 피해 범위 예측 및 대피 경로 산출</p>
+                                </div>
+                                <div class="uc-domain-card">
+                                    <strong>⚡ 에너지 관리</strong>
+                                    <p>건물-센서-환경 관계로 구역별 에너지 사용 패턴 추적 및 최적화</p>
+                                </div>
+                                <div class="uc-domain-card">
+                                    <strong>🚗 자율주행</strong>
+                                    <p>Vehicle-Road-Facility 관계 그래프로 실시간 경로 컨텍스트 제공</p>
+                                </div>
+                                <div class="uc-domain-card">
+                                    <strong>🤖 LLM/AI 연동</strong>
+                                    <p>Knowledge Graph를 RAG 소스로 활용한 자연어 도시 질의응답</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Toolbar -->
+    <div id="toolbar">
+        <button id="btn-reset-view" class="btn">Reset View</button>
+        <button id="btn-toggle-buildings" class="btn active">Buildings</button>
+        <button id="btn-toggle-roads" class="btn active">Roads</button>
+        <button id="btn-toggle-vehicles" class="btn active">Vehicles</button>
+        <button id="btn-toggle-sensors" class="btn active">Sensors</button>
+        <button id="btn-toggle-cameras" class="btn active">Cameras</button>
+        <button id="btn-toggle-trees" class="btn active">Trees</button>
+        <button id="btn-toggle-parcels" class="btn" title="지적도 필지 경계 표시">Parcels</button>
+        <span class="toolbar-separator"></span>
+        <button id="btn-toggle-iot" class="btn active" title="사물주소 전체 표시/숨김">ThingsAddr</button>
+        <button class="btn btn-iot-sub active" data-iot-type="BUSST" title="버스정류장" style="border-left:3px solid #29b6f6">🚏</button>
+        <button class="btn btn-iot-sub active" data-iot-type="CoolingCen" title="무더위쉼터" style="border-left:3px solid #ff7043">🏠</button>
+        <button class="btn btn-iot-sub active" data-iot-type="CHPARK" title="어린이공원" style="border-left:3px solid #66bb6a">🌳</button>
+        <button class="btn btn-iot-sub active" data-iot-type="CivilDefense" title="민방위대피시설" style="border-left:3px solid #ab47bc">🛡️</button>
+        <button class="btn btn-iot-sub active" data-iot-type="ChPlayground" title="어린이놀이터" style="border-left:3px solid #26c6da">🎠</button>
+        <button class="btn btn-iot-sub active" data-iot-type="EQOUT" title="지진옥외대피장소" style="border-left:3px solid #ef5350">⚠️</button>
+        <button class="btn btn-iot-sub active" data-iot-type="TAXIST" title="택시승강장" style="border-left:3px solid #ffa726">🚕</button>
+        <button class="btn btn-iot-sub active" data-iot-type="SCPARK" title="소규모공원" style="border-left:3px solid #9ccc65">🌿</button>
+        <button class="btn btn-iot-sub active" data-iot-type="SLEEPRA" title="쪽방" style="border-left:3px solid #8d6e63">🏚️</button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/js/cesiumManager.js?v=23"></script>
+    <script src="/js/sceneLoader.js?v=23"></script>
+    <script src="/js/geoKGPanel.js?v=23"></script>
+    <script src="/js/dashboardPanel.js?v=23"></script>
+    <script src="/js/kgGraphView.js?v=23"></script>
+    <script src="/js/kgAnalysis.js?v=23"></script>
+    <script src="/js/wsClient.js?v=23"></script>
+    <script src="/js/app.js?v=23"></script>
+</body>
+</html>

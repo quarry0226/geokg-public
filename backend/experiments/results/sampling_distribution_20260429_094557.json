@@ -1,0 +1,1769 @@
+{
+  "experiment": "sampling_distribution",
+  "addresses": [
+    "R2.9"
+  ],
+  "timestamp": "2026-04-29T09:45:57.659434",
+  "full_population": {
+    "total": 46480,
+    "by_dong": {
+      "12000": 2245,
+      "13900": 933,
+      "3020054800": 65,
+      "14300": 1385,
+      "14000": 794,
+      "14100": 1734,
+      "12600": 314,
+      "3020054600": 86,
+      "11900": 1281,
+      "12100": 1094,
+      "3020054000": 224,
+      "11600": 949,
+      "11200": 2749,
+      "11500": 927,
+      "11700": 2111,
+      "11100": 2109,
+      "14600": 1934,
+      "3020058000": 271,
+      "14400": 815,
+      "14700": 907,
+      "15200": 290,
+      "14500": 1181,
+      "15300": 174,
+      "3020052600": 209,
+      "11300": 975,
+      "11800": 465,
+      "10900": 470,
+      "11000": 621,
+      "3020052000": 859,
+      "15000": 282,
+      "15100": 166,
+      "14900": 544,
+      "14800": 41,
+      "10300": 1312,
+      "10400": 791,
+      "12700": 775,
+      "3020053000": 285,
+      "13200": 837,
+      "10500": 553,
+      "10100": 1628,
+      "10200": 600,
+      "10600": 674,
+      "11400": 1089,
+      "10700": 782,
+      "10800": 521,
+      "12800": 658,
+      "12200": 1462,
+      "14200": 562,
+      "12500": 1194,
+      "13800": 523,
+      "12300": 740,
+      "3020057000": 243,
+      "13000": 460,
+      "3020055000": 164,
+      "13400": 149,
+      "3020054700": 190,
+      "13700": 431,
+      "3020052700": 84,
+      "12900": 49,
+      "12400": 370,
+      "3020061000": 42,
+      "3020060000": 84,
+      "13100": 24
+    },
+    "by_dong_pct": {
+      "10100": 3.5,
+      "10200": 1.29,
+      "10300": 2.82,
+      "10400": 1.7,
+      "10500": 1.19,
+      "10600": 1.45,
+      "10700": 1.68,
+      "10800": 1.12,
+      "10900": 1.01,
+      "11000": 1.34,
+      "11100": 4.54,
+      "11200": 5.91,
+      "11300": 2.1,
+      "11400": 2.34,
+      "11500": 1.99,
+      "11600": 2.04,
+      "11700": 4.54,
+      "11800": 1.0,
+      "11900": 2.76,
+      "12000": 4.83,
+      "12100": 2.35,
+      "12200": 3.15,
+      "12300": 1.59,
+      "12400": 0.8,
+      "12500": 2.57,
+      "12600": 0.68,
+      "12700": 1.67,
+      "12800": 1.42,
+      "12900": 0.11,
+      "13000": 0.99,
+      "13100": 0.05,
+      "13200": 1.8,
+      "13400": 0.32,
+      "13700": 0.93,
+      "13800": 1.13,
+      "13900": 2.01,
+      "14000": 1.71,
+      "14100": 3.73,
+      "14200": 1.21,
+      "14300": 2.98,
+      "14400": 1.75,
+      "14500": 2.54,
+      "14600": 4.16,
+      "14700": 1.95,
+      "14800": 0.09,
+      "14900": 1.17,
+      "15000": 0.61,
+      "15100": 0.36,
+      "15200": 0.62,
+      "15300": 0.37,
+      "3020052000": 1.85,
+      "3020052600": 0.45,
+      "3020052700": 0.18,
+      "3020053000": 0.61,
+      "3020054000": 0.48,
+      "3020054600": 0.19,
+      "3020054700": 0.41,
+      "3020054800": 0.14,
+      "3020055000": 0.35,
+      "3020057000": 0.52,
+      "3020058000": 0.58,
+      "3020060000": 0.18,
+      "3020061000": 0.09
+    }
+  },
+  "samples": [
+    {
+      "percentage": 10,
+      "n_sampled": 4648,
+      "chi2_statistic": 79.79,
+      "degrees_of_freedom": 62,
+      "max_deviation_pct_points": 0.79,
+      "max_deviation_dong": "12000",
+      "per_dong": {
+        "10100": {
+          "expected": 162.8,
+          "observed": 158,
+          "deviation_pct_points": -0.1
+        },
+        "10200": {
+          "expected": 60.0,
+          "observed": 63,
+          "deviation_pct_points": 0.06
+        },
+        "10300": {
+          "expected": 131.2,
+          "observed": 150,
+          "deviation_pct_points": 0.4
+        },
+        "10400": {
+          "expected": 79.1,
+          "observed": 90,
+          "deviation_pct_points": 0.23
+        },
+        "10500": {
+          "expected": 55.3,
+          "observed": 53,
+          "deviation_pct_points": -0.05
+        },
+        "10600": {
+          "expected": 67.4,
+          "observed": 65,
+          "deviation_pct_points": -0.05
+        },
+        "10700": {
+          "expected": 78.2,
+          "observed": 97,
+          "deviation_pct_points": 0.4
+        },
+        "10800": {
+          "expected": 52.1,
+          "observed": 55,
+          "deviation_pct_points": 0.06
+        },
+        "10900": {
+          "expected": 47.0,
+          "observed": 45,
+          "deviation_pct_points": -0.04
+        },
+        "11000": {
+          "expected": 62.1,
+          "observed": 66,
+          "deviation_pct_points": 0.08
+        },
+        "11100": {
+          "expected": 210.9,
+          "observed": 220,
+          "deviation_pct_points": 0.2
+        },
+        "11200": {
+          "expected": 274.9,
+          "observed": 243,
+          "deviation_pct_points": -0.69
+        },
+        "11300": {
+          "expected": 97.5,
+          "observed": 90,
+          "deviation_pct_points": -0.16
+        },
+        "11400": {
+          "expected": 108.9,
+          "observed": 122,
+          "deviation_pct_points": 0.28
+        },
+        "11500": {
+          "expected": 92.7,
+          "observed": 81,
+          "deviation_pct_points": -0.25
+        },
+        "11600": {
+          "expected": 94.9,
+          "observed": 79,
+          "deviation_pct_points": -0.34
+        },
+        "11700": {
+          "expected": 211.1,
+          "observed": 186,
+          "deviation_pct_points": -0.54
+        },
+        "11800": {
+          "expected": 46.5,
+          "observed": 46,
+          "deviation_pct_points": -0.01
+        },
+        "11900": {
+          "expected": 128.1,
+          "observed": 117,
+          "deviation_pct_points": -0.24
+        },
+        "12000": {
+          "expected": 224.5,
+          "observed": 188,
+          "deviation_pct_points": -0.79
+        },
+        "12100": {
+          "expected": 109.4,
+          "observed": 109,
+          "deviation_pct_points": -0.01
+        },
+        "12200": {
+          "expected": 146.2,
+          "observed": 168,
+          "deviation_pct_points": 0.47
+        },
+        "12300": {
+          "expected": 74.0,
+          "observed": 92,
+          "deviation_pct_points": 0.39
+        },
+        "12400": {
+          "expected": 37.0,
+          "observed": 40,
+          "deviation_pct_points": 0.06
+        },
+        "12500": {
+          "expected": 119.4,
+          "observed": 118,
+          "deviation_pct_points": -0.03
+        },
+        "12600": {
+          "expected": 31.4,
+          "observed": 28,
+          "deviation_pct_points": -0.07
+        },
+        "12700": {
+          "expected": 77.5,
+          "observed": 79,
+          "deviation_pct_points": 0.03
+        },
+        "12800": {
+          "expected": 65.8,
+          "observed": 81,
+          "deviation_pct_points": 0.33
+        },
+        "12900": {
+          "expected": 4.9,
+          "observed": 5,
+          "deviation_pct_points": 0.0
+        },
+        "13000": {
+          "expected": 46.0,
+          "observed": 39,
+          "deviation_pct_points": -0.15
+        },
+        "13100": {
+          "expected": 2.4,
+          "observed": 0,
+          "deviation_pct_points": -0.05
+        },
+        "13200": {
+          "expected": 83.7,
+          "observed": 88,
+          "deviation_pct_points": 0.09
+        },
+        "13400": {
+          "expected": 14.9,
+          "observed": 9,
+          "deviation_pct_points": -0.13
+        },
+        "13700": {
+          "expected": 43.1,
+          "observed": 37,
+          "deviation_pct_points": -0.13
+        },
+        "13800": {
+          "expected": 52.3,
+          "observed": 60,
+          "deviation_pct_points": 0.17
+        },
+        "13900": {
+          "expected": 93.3,
+          "observed": 92,
+          "deviation_pct_points": -0.03
+        },
+        "14000": {
+          "expected": 79.4,
+          "observed": 77,
+          "deviation_pct_points": -0.05
+        },
+        "14100": {
+          "expected": 173.4,
+          "observed": 167,
+          "deviation_pct_points": -0.14
+        },
+        "14200": {
+          "expected": 56.2,
+          "observed": 54,
+          "deviation_pct_points": -0.05
+        },
+        "14300": {
+          "expected": 138.5,
+          "observed": 139,
+          "deviation_pct_points": 0.01
+        },
+        "14400": {
+          "expected": 81.5,
+          "observed": 80,
+          "deviation_pct_points": -0.03
+        },
+        "14500": {
+          "expected": 118.1,
+          "observed": 126,
+          "deviation_pct_points": 0.17
+        },
+        "14600": {
+          "expected": 193.4,
+          "observed": 190,
+          "deviation_pct_points": -0.07
+        },
+        "14700": {
+          "expected": 90.7,
+          "observed": 93,
+          "deviation_pct_points": 0.05
+        },
+        "14800": {
+          "expected": 4.1,
+          "observed": 7,
+          "deviation_pct_points": 0.06
+        },
+        "14900": {
+          "expected": 54.4,
+          "observed": 53,
+          "deviation_pct_points": -0.03
+        },
+        "15000": {
+          "expected": 28.2,
+          "observed": 20,
+          "deviation_pct_points": -0.18
+        },
+        "15100": {
+          "expected": 16.6,
+          "observed": 22,
+          "deviation_pct_points": 0.12
+        },
+        "15200": {
+          "expected": 29.0,
+          "observed": 43,
+          "deviation_pct_points": 0.3
+        },
+        "15300": {
+          "expected": 17.4,
+          "observed": 18,
+          "deviation_pct_points": 0.01
+        },
+        "3020052000": {
+          "expected": 85.9,
+          "observed": 90,
+          "deviation_pct_points": 0.09
+        },
+        "3020052600": {
+          "expected": 20.9,
+          "observed": 26,
+          "deviation_pct_points": 0.11
+        },
+        "3020052700": {
+          "expected": 8.4,
+          "observed": 13,
+          "deviation_pct_points": 0.1
+        },
+        "3020053000": {
+          "expected": 28.5,
+          "observed": 27,
+          "deviation_pct_points": -0.03
+        },
+        "3020054000": {
+          "expected": 22.4,
+          "observed": 23,
+          "deviation_pct_points": 0.01
+        },
+        "3020054600": {
+          "expected": 8.6,
+          "observed": 13,
+          "deviation_pct_points": 0.09
+        },
+        "3020054700": {
+          "expected": 19.0,
+          "observed": 15,
+          "deviation_pct_points": -0.09
+        },
+        "3020054800": {
+          "expected": 6.5,
+          "observed": 11,
+          "deviation_pct_points": 0.1
+        },
+        "3020055000": {
+          "expected": 16.4,
+          "observed": 14,
+          "deviation_pct_points": -0.05
+        },
+        "3020057000": {
+          "expected": 24.3,
+          "observed": 18,
+          "deviation_pct_points": -0.14
+        },
+        "3020058000": {
+          "expected": 27.1,
+          "observed": 37,
+          "deviation_pct_points": 0.21
+        },
+        "3020060000": {
+          "expected": 8.4,
+          "observed": 9,
+          "deviation_pct_points": 0.01
+        },
+        "3020061000": {
+          "expected": 4.2,
+          "observed": 4,
+          "deviation_pct_points": -0.0
+        }
+      }
+    },
+    {
+      "percentage": 25,
+      "n_sampled": 11620,
+      "chi2_statistic": 41.62,
+      "degrees_of_freedom": 62,
+      "max_deviation_pct_points": 0.28,
+      "max_deviation_dong": "14100",
+      "per_dong": {
+        "10100": {
+          "expected": 407.0,
+          "observed": 394,
+          "deviation_pct_points": -0.11
+        },
+        "10200": {
+          "expected": 150.0,
+          "observed": 139,
+          "deviation_pct_points": -0.09
+        },
+        "10300": {
+          "expected": 328.0,
+          "observed": 346,
+          "deviation_pct_points": 0.15
+        },
+        "10400": {
+          "expected": 197.8,
+          "observed": 200,
+          "deviation_pct_points": 0.02
+        },
+        "10500": {
+          "expected": 138.2,
+          "observed": 132,
+          "deviation_pct_points": -0.05
+        },
+        "10600": {
+          "expected": 168.5,
+          "observed": 166,
+          "deviation_pct_points": -0.02
+        },
+        "10700": {
+          "expected": 195.5,
+          "observed": 208,
+          "deviation_pct_points": 0.11
+        },
+        "10800": {
+          "expected": 130.2,
+          "observed": 141,
+          "deviation_pct_points": 0.09
+        },
+        "10900": {
+          "expected": 117.5,
+          "observed": 112,
+          "deviation_pct_points": -0.05
+        },
+        "11000": {
+          "expected": 155.2,
+          "observed": 154,
+          "deviation_pct_points": -0.01
+        },
+        "11100": {
+          "expected": 527.2,
+          "observed": 516,
+          "deviation_pct_points": -0.1
+        },
+        "11200": {
+          "expected": 687.2,
+          "observed": 655,
+          "deviation_pct_points": -0.28
+        },
+        "11300": {
+          "expected": 243.8,
+          "observed": 245,
+          "deviation_pct_points": 0.01
+        },
+        "11400": {
+          "expected": 272.2,
+          "observed": 289,
+          "deviation_pct_points": 0.14
+        },
+        "11500": {
+          "expected": 231.8,
+          "observed": 223,
+          "deviation_pct_points": -0.08
+        },
+        "11600": {
+          "expected": 237.2,
+          "observed": 235,
+          "deviation_pct_points": -0.02
+        },
+        "11700": {
+          "expected": 527.8,
+          "observed": 528,
+          "deviation_pct_points": 0.0
+        },
+        "11800": {
+          "expected": 116.2,
+          "observed": 126,
+          "deviation_pct_points": 0.08
+        },
+        "11900": {
+          "expected": 320.2,
+          "observed": 323,
+          "deviation_pct_points": 0.02
+        },
+        "12000": {
+          "expected": 561.2,
+          "observed": 558,
+          "deviation_pct_points": -0.03
+        },
+        "12100": {
+          "expected": 273.5,
+          "observed": 264,
+          "deviation_pct_points": -0.08
+        },
+        "12200": {
+          "expected": 365.5,
+          "observed": 395,
+          "deviation_pct_points": 0.25
+        },
+        "12300": {
+          "expected": 185.0,
+          "observed": 199,
+          "deviation_pct_points": 0.12
+        },
+        "12400": {
+          "expected": 92.5,
+          "observed": 88,
+          "deviation_pct_points": -0.04
+        },
+        "12500": {
+          "expected": 298.5,
+          "observed": 315,
+          "deviation_pct_points": 0.14
+        },
+        "12600": {
+          "expected": 78.5,
+          "observed": 59,
+          "deviation_pct_points": -0.17
+        },
+        "12700": {
+          "expected": 193.8,
+          "observed": 198,
+          "deviation_pct_points": 0.04
+        },
+        "12800": {
+          "expected": 164.5,
+          "observed": 166,
+          "deviation_pct_points": 0.01
+        },
+        "12900": {
+          "expected": 12.2,
+          "observed": 11,
+          "deviation_pct_points": -0.01
+        },
+        "13000": {
+          "expected": 115.0,
+          "observed": 109,
+          "deviation_pct_points": -0.05
+        },
+        "13100": {
+          "expected": 6.0,
+          "observed": 4,
+          "deviation_pct_points": -0.02
+        },
+        "13200": {
+          "expected": 209.2,
+          "observed": 204,
+          "deviation_pct_points": -0.05
+        },
+        "13400": {
+          "expected": 37.2,
+          "observed": 32,
+          "deviation_pct_points": -0.05
+        },
+        "13700": {
+          "expected": 107.8,
+          "observed": 105,
+          "deviation_pct_points": -0.02
+        },
+        "13800": {
+          "expected": 130.8,
+          "observed": 142,
+          "deviation_pct_points": 0.1
+        },
+        "13900": {
+          "expected": 233.2,
+          "observed": 262,
+          "deviation_pct_points": 0.25
+        },
+        "14000": {
+          "expected": 198.5,
+          "observed": 194,
+          "deviation_pct_points": -0.04
+        },
+        "14100": {
+          "expected": 433.5,
+          "observed": 401,
+          "deviation_pct_points": -0.28
+        },
+        "14200": {
+          "expected": 140.5,
+          "observed": 132,
+          "deviation_pct_points": -0.07
+        },
+        "14300": {
+          "expected": 346.2,
+          "observed": 357,
+          "deviation_pct_points": 0.09
+        },
+        "14400": {
+          "expected": 203.8,
+          "observed": 187,
+          "deviation_pct_points": -0.14
+        },
+        "14500": {
+          "expected": 295.2,
+          "observed": 304,
+          "deviation_pct_points": 0.08
+        },
+        "14600": {
+          "expected": 483.5,
+          "observed": 467,
+          "deviation_pct_points": -0.14
+        },
+        "14700": {
+          "expected": 226.8,
+          "observed": 219,
+          "deviation_pct_points": -0.07
+        },
+        "14800": {
+          "expected": 10.2,
+          "observed": 12,
+          "deviation_pct_points": 0.02
+        },
+        "14900": {
+          "expected": 136.0,
+          "observed": 130,
+          "deviation_pct_points": -0.05
+        },
+        "15000": {
+          "expected": 70.5,
+          "observed": 68,
+          "deviation_pct_points": -0.02
+        },
+        "15100": {
+          "expected": 41.5,
+          "observed": 50,
+          "deviation_pct_points": 0.07
+        },
+        "15200": {
+          "expected": 72.5,
+          "observed": 83,
+          "deviation_pct_points": 0.09
+        },
+        "15300": {
+          "expected": 43.5,
+          "observed": 45,
+          "deviation_pct_points": 0.01
+        },
+        "3020052000": {
+          "expected": 214.8,
+          "observed": 217,
+          "deviation_pct_points": 0.02
+        },
+        "3020052600": {
+          "expected": 52.2,
+          "observed": 53,
+          "deviation_pct_points": 0.01
+        },
+        "3020052700": {
+          "expected": 21.0,
+          "observed": 23,
+          "deviation_pct_points": 0.02
+        },
+        "3020053000": {
+          "expected": 71.2,
+          "observed": 77,
+          "deviation_pct_points": 0.05
+        },
+        "3020054000": {
+          "expected": 56.0,
+          "observed": 60,
+          "deviation_pct_points": 0.03
+        },
+        "3020054600": {
+          "expected": 21.5,
+          "observed": 29,
+          "deviation_pct_points": 0.06
+        },
+        "3020054700": {
+          "expected": 47.5,
+          "observed": 44,
+          "deviation_pct_points": -0.03
+        },
+        "3020054800": {
+          "expected": 16.2,
+          "observed": 15,
+          "deviation_pct_points": -0.01
+        },
+        "3020055000": {
+          "expected": 41.0,
+          "observed": 43,
+          "deviation_pct_points": 0.02
+        },
+        "3020057000": {
+          "expected": 60.8,
+          "observed": 58,
+          "deviation_pct_points": -0.02
+        },
+        "3020058000": {
+          "expected": 67.8,
+          "observed": 69,
+          "deviation_pct_points": 0.01
+        },
+        "3020060000": {
+          "expected": 21.0,
+          "observed": 25,
+          "deviation_pct_points": 0.03
+        },
+        "3020061000": {
+          "expected": 10.5,
+          "observed": 15,
+          "deviation_pct_points": 0.04
+        }
+      }
+    },
+    {
+      "percentage": 50,
+      "n_sampled": 23240,
+      "chi2_statistic": 41.05,
+      "degrees_of_freedom": 62,
+      "max_deviation_pct_points": 0.16,
+      "max_deviation_dong": "13900",
+      "per_dong": {
+        "10100": {
+          "expected": 814.0,
+          "observed": 799,
+          "deviation_pct_points": -0.06
+        },
+        "10200": {
+          "expected": 300.0,
+          "observed": 287,
+          "deviation_pct_points": -0.06
+        },
+        "10300": {
+          "expected": 656.0,
+          "observed": 688,
+          "deviation_pct_points": 0.14
+        },
+        "10400": {
+          "expected": 395.5,
+          "observed": 407,
+          "deviation_pct_points": 0.05
+        },
+        "10500": {
+          "expected": 276.5,
+          "observed": 262,
+          "deviation_pct_points": -0.06
+        },
+        "10600": {
+          "expected": 337.0,
+          "observed": 314,
+          "deviation_pct_points": -0.1
+        },
+        "10700": {
+          "expected": 391.0,
+          "observed": 380,
+          "deviation_pct_points": -0.05
+        },
+        "10800": {
+          "expected": 260.5,
+          "observed": 263,
+          "deviation_pct_points": 0.01
+        },
+        "10900": {
+          "expected": 235.0,
+          "observed": 246,
+          "deviation_pct_points": 0.05
+        },
+        "11000": {
+          "expected": 310.5,
+          "observed": 306,
+          "deviation_pct_points": -0.02
+        },
+        "11100": {
+          "expected": 1054.5,
+          "observed": 1032,
+          "deviation_pct_points": -0.1
+        },
+        "11200": {
+          "expected": 1374.5,
+          "observed": 1369,
+          "deviation_pct_points": -0.02
+        },
+        "11300": {
+          "expected": 487.5,
+          "observed": 517,
+          "deviation_pct_points": 0.13
+        },
+        "11400": {
+          "expected": 544.5,
+          "observed": 551,
+          "deviation_pct_points": 0.03
+        },
+        "11500": {
+          "expected": 463.5,
+          "observed": 456,
+          "deviation_pct_points": -0.03
+        },
+        "11600": {
+          "expected": 474.5,
+          "observed": 450,
+          "deviation_pct_points": -0.11
+        },
+        "11700": {
+          "expected": 1055.5,
+          "observed": 1020,
+          "deviation_pct_points": -0.15
+        },
+        "11800": {
+          "expected": 232.5,
+          "observed": 240,
+          "deviation_pct_points": 0.03
+        },
+        "11900": {
+          "expected": 640.5,
+          "observed": 653,
+          "deviation_pct_points": 0.05
+        },
+        "12000": {
+          "expected": 1122.5,
+          "observed": 1136,
+          "deviation_pct_points": 0.06
+        },
+        "12100": {
+          "expected": 547.0,
+          "observed": 537,
+          "deviation_pct_points": -0.04
+        },
+        "12200": {
+          "expected": 731.0,
+          "observed": 724,
+          "deviation_pct_points": -0.03
+        },
+        "12300": {
+          "expected": 370.0,
+          "observed": 377,
+          "deviation_pct_points": 0.03
+        },
+        "12400": {
+          "expected": 185.0,
+          "observed": 175,
+          "deviation_pct_points": -0.04
+        },
+        "12500": {
+          "expected": 597.0,
+          "observed": 623,
+          "deviation_pct_points": 0.11
+        },
+        "12600": {
+          "expected": 157.0,
+          "observed": 127,
+          "deviation_pct_points": -0.13
+        },
+        "12700": {
+          "expected": 387.5,
+          "observed": 403,
+          "deviation_pct_points": 0.07
+        },
+        "12800": {
+          "expected": 329.0,
+          "observed": 333,
+          "deviation_pct_points": 0.02
+        },
+        "12900": {
+          "expected": 24.5,
+          "observed": 25,
+          "deviation_pct_points": 0.0
+        },
+        "13000": {
+          "expected": 230.0,
+          "observed": 229,
+          "deviation_pct_points": -0.0
+        },
+        "13100": {
+          "expected": 12.0,
+          "observed": 13,
+          "deviation_pct_points": 0.0
+        },
+        "13200": {
+          "expected": 418.5,
+          "observed": 446,
+          "deviation_pct_points": 0.12
+        },
+        "13400": {
+          "expected": 74.5,
+          "observed": 75,
+          "deviation_pct_points": 0.0
+        },
+        "13700": {
+          "expected": 215.5,
+          "observed": 211,
+          "deviation_pct_points": -0.02
+        },
+        "13800": {
+          "expected": 261.5,
+          "observed": 259,
+          "deviation_pct_points": -0.01
+        },
+        "13900": {
+          "expected": 466.5,
+          "observed": 503,
+          "deviation_pct_points": 0.16
+        },
+        "14000": {
+          "expected": 397.0,
+          "observed": 381,
+          "deviation_pct_points": -0.07
+        },
+        "14100": {
+          "expected": 867.0,
+          "observed": 847,
+          "deviation_pct_points": -0.09
+        },
+        "14200": {
+          "expected": 281.0,
+          "observed": 257,
+          "deviation_pct_points": -0.1
+        },
+        "14300": {
+          "expected": 692.5,
+          "observed": 702,
+          "deviation_pct_points": 0.04
+        },
+        "14400": {
+          "expected": 407.5,
+          "observed": 404,
+          "deviation_pct_points": -0.02
+        },
+        "14500": {
+          "expected": 590.5,
+          "observed": 606,
+          "deviation_pct_points": 0.07
+        },
+        "14600": {
+          "expected": 967.0,
+          "observed": 986,
+          "deviation_pct_points": 0.08
+        },
+        "14700": {
+          "expected": 453.5,
+          "observed": 460,
+          "deviation_pct_points": 0.03
+        },
+        "14800": {
+          "expected": 20.5,
+          "observed": 23,
+          "deviation_pct_points": 0.01
+        },
+        "14900": {
+          "expected": 272.0,
+          "observed": 268,
+          "deviation_pct_points": -0.02
+        },
+        "15000": {
+          "expected": 141.0,
+          "observed": 137,
+          "deviation_pct_points": -0.02
+        },
+        "15100": {
+          "expected": 83.0,
+          "observed": 92,
+          "deviation_pct_points": 0.04
+        },
+        "15200": {
+          "expected": 145.0,
+          "observed": 154,
+          "deviation_pct_points": 0.04
+        },
+        "15300": {
+          "expected": 87.0,
+          "observed": 94,
+          "deviation_pct_points": 0.03
+        },
+        "3020052000": {
+          "expected": 429.5,
+          "observed": 424,
+          "deviation_pct_points": -0.02
+        },
+        "3020052600": {
+          "expected": 104.5,
+          "observed": 107,
+          "deviation_pct_points": 0.01
+        },
+        "3020052700": {
+          "expected": 42.0,
+          "observed": 50,
+          "deviation_pct_points": 0.03
+        },
+        "3020053000": {
+          "expected": 142.5,
+          "observed": 130,
+          "deviation_pct_points": -0.05
+        },
+        "3020054000": {
+          "expected": 112.0,
+          "observed": 119,
+          "deviation_pct_points": 0.03
+        },
+        "3020054600": {
+          "expected": 43.0,
+          "observed": 48,
+          "deviation_pct_points": 0.02
+        },
+        "3020054700": {
+          "expected": 95.0,
+          "observed": 95,
+          "deviation_pct_points": 0.0
+        },
+        "3020054800": {
+          "expected": 32.5,
+          "observed": 26,
+          "deviation_pct_points": -0.03
+        },
+        "3020055000": {
+          "expected": 82.0,
+          "observed": 85,
+          "deviation_pct_points": 0.01
+        },
+        "3020057000": {
+          "expected": 121.5,
+          "observed": 107,
+          "deviation_pct_points": -0.06
+        },
+        "3020058000": {
+          "expected": 135.5,
+          "observed": 128,
+          "deviation_pct_points": -0.03
+        },
+        "3020060000": {
+          "expected": 42.0,
+          "observed": 48,
+          "deviation_pct_points": 0.03
+        },
+        "3020061000": {
+          "expected": 21.0,
+          "observed": 26,
+          "deviation_pct_points": 0.02
+        }
+      }
+    },
+    {
+      "percentage": 75,
+      "n_sampled": 34860,
+      "chi2_statistic": 16.71,
+      "degrees_of_freedom": 62,
+      "max_deviation_pct_points": 0.1,
+      "max_deviation_dong": "13900",
+      "per_dong": {
+        "10100": {
+          "expected": 1221.0,
+          "observed": 1202,
+          "deviation_pct_points": -0.05
+        },
+        "10200": {
+          "expected": 450.0,
+          "observed": 454,
+          "deviation_pct_points": 0.01
+        },
+        "10300": {
+          "expected": 984.0,
+          "observed": 990,
+          "deviation_pct_points": 0.02
+        },
+        "10400": {
+          "expected": 593.2,
+          "observed": 593,
+          "deviation_pct_points": -0.0
+        },
+        "10500": {
+          "expected": 414.8,
+          "observed": 404,
+          "deviation_pct_points": -0.03
+        },
+        "10600": {
+          "expected": 505.5,
+          "observed": 484,
+          "deviation_pct_points": -0.06
+        },
+        "10700": {
+          "expected": 586.5,
+          "observed": 571,
+          "deviation_pct_points": -0.04
+        },
+        "10800": {
+          "expected": 390.8,
+          "observed": 389,
+          "deviation_pct_points": -0.01
+        },
+        "10900": {
+          "expected": 352.5,
+          "observed": 347,
+          "deviation_pct_points": -0.02
+        },
+        "11000": {
+          "expected": 465.8,
+          "observed": 467,
+          "deviation_pct_points": 0.0
+        },
+        "11100": {
+          "expected": 1581.8,
+          "observed": 1578,
+          "deviation_pct_points": -0.01
+        },
+        "11200": {
+          "expected": 2061.8,
+          "observed": 2074,
+          "deviation_pct_points": 0.04
+        },
+        "11300": {
+          "expected": 731.2,
+          "observed": 746,
+          "deviation_pct_points": 0.04
+        },
+        "11400": {
+          "expected": 816.8,
+          "observed": 817,
+          "deviation_pct_points": 0.0
+        },
+        "11500": {
+          "expected": 695.2,
+          "observed": 688,
+          "deviation_pct_points": -0.02
+        },
+        "11600": {
+          "expected": 711.8,
+          "observed": 698,
+          "deviation_pct_points": -0.04
+        },
+        "11700": {
+          "expected": 1583.2,
+          "observed": 1577,
+          "deviation_pct_points": -0.02
+        },
+        "11800": {
+          "expected": 348.8,
+          "observed": 349,
+          "deviation_pct_points": 0.0
+        },
+        "11900": {
+          "expected": 960.8,
+          "observed": 969,
+          "deviation_pct_points": 0.02
+        },
+        "12000": {
+          "expected": 1683.8,
+          "observed": 1681,
+          "deviation_pct_points": -0.01
+        },
+        "12100": {
+          "expected": 820.5,
+          "observed": 830,
+          "deviation_pct_points": 0.03
+        },
+        "12200": {
+          "expected": 1096.5,
+          "observed": 1065,
+          "deviation_pct_points": -0.09
+        },
+        "12300": {
+          "expected": 555.0,
+          "observed": 564,
+          "deviation_pct_points": 0.03
+        },
+        "12400": {
+          "expected": 277.5,
+          "observed": 271,
+          "deviation_pct_points": -0.02
+        },
+        "12500": {
+          "expected": 895.5,
+          "observed": 920,
+          "deviation_pct_points": 0.07
+        },
+        "12600": {
+          "expected": 235.5,
+          "observed": 224,
+          "deviation_pct_points": -0.03
+        },
+        "12700": {
+          "expected": 581.2,
+          "observed": 593,
+          "deviation_pct_points": 0.03
+        },
+        "12800": {
+          "expected": 493.5,
+          "observed": 504,
+          "deviation_pct_points": 0.03
+        },
+        "12900": {
+          "expected": 36.8,
+          "observed": 35,
+          "deviation_pct_points": -0.01
+        },
+        "13000": {
+          "expected": 345.0,
+          "observed": 332,
+          "deviation_pct_points": -0.04
+        },
+        "13100": {
+          "expected": 18.0,
+          "observed": 18,
+          "deviation_pct_points": 0.0
+        },
+        "13200": {
+          "expected": 627.8,
+          "observed": 655,
+          "deviation_pct_points": 0.08
+        },
+        "13400": {
+          "expected": 111.8,
+          "observed": 118,
+          "deviation_pct_points": 0.02
+        },
+        "13700": {
+          "expected": 323.2,
+          "observed": 321,
+          "deviation_pct_points": -0.01
+        },
+        "13800": {
+          "expected": 392.2,
+          "observed": 400,
+          "deviation_pct_points": 0.02
+        },
+        "13900": {
+          "expected": 699.8,
+          "observed": 733,
+          "deviation_pct_points": 0.1
+        },
+        "14000": {
+          "expected": 595.5,
+          "observed": 577,
+          "deviation_pct_points": -0.05
+        },
+        "14100": {
+          "expected": 1300.5,
+          "observed": 1296,
+          "deviation_pct_points": -0.01
+        },
+        "14200": {
+          "expected": 421.5,
+          "observed": 406,
+          "deviation_pct_points": -0.04
+        },
+        "14300": {
+          "expected": 1038.8,
+          "observed": 1038,
+          "deviation_pct_points": -0.0
+        },
+        "14400": {
+          "expected": 611.2,
+          "observed": 610,
+          "deviation_pct_points": -0.0
+        },
+        "14500": {
+          "expected": 885.8,
+          "observed": 903,
+          "deviation_pct_points": 0.05
+        },
+        "14600": {
+          "expected": 1450.5,
+          "observed": 1452,
+          "deviation_pct_points": 0.0
+        },
+        "14700": {
+          "expected": 680.2,
+          "observed": 690,
+          "deviation_pct_points": 0.03
+        },
+        "14800": {
+          "expected": 30.8,
+          "observed": 30,
+          "deviation_pct_points": -0.0
+        },
+        "14900": {
+          "expected": 408.0,
+          "observed": 411,
+          "deviation_pct_points": 0.01
+        },
+        "15000": {
+          "expected": 211.5,
+          "observed": 203,
+          "deviation_pct_points": -0.02
+        },
+        "15100": {
+          "expected": 124.5,
+          "observed": 132,
+          "deviation_pct_points": 0.02
+        },
+        "15200": {
+          "expected": 217.5,
+          "observed": 226,
+          "deviation_pct_points": 0.02
+        },
+        "15300": {
+          "expected": 130.5,
+          "observed": 140,
+          "deviation_pct_points": 0.03
+        },
+        "3020052000": {
+          "expected": 644.2,
+          "observed": 639,
+          "deviation_pct_points": -0.02
+        },
+        "3020052600": {
+          "expected": 156.8,
+          "observed": 158,
+          "deviation_pct_points": 0.0
+        },
+        "3020052700": {
+          "expected": 63.0,
+          "observed": 61,
+          "deviation_pct_points": -0.01
+        },
+        "3020053000": {
+          "expected": 213.8,
+          "observed": 201,
+          "deviation_pct_points": -0.04
+        },
+        "3020054000": {
+          "expected": 168.0,
+          "observed": 168,
+          "deviation_pct_points": 0.0
+        },
+        "3020054600": {
+          "expected": 64.5,
+          "observed": 69,
+          "deviation_pct_points": 0.01
+        },
+        "3020054700": {
+          "expected": 142.5,
+          "observed": 138,
+          "deviation_pct_points": -0.01
+        },
+        "3020054800": {
+          "expected": 48.8,
+          "observed": 42,
+          "deviation_pct_points": -0.02
+        },
+        "3020055000": {
+          "expected": 123.0,
+          "observed": 129,
+          "deviation_pct_points": 0.02
+        },
+        "3020057000": {
+          "expected": 182.2,
+          "observed": 182,
+          "deviation_pct_points": -0.0
+        },
+        "3020058000": {
+          "expected": 203.2,
+          "observed": 196,
+          "deviation_pct_points": -0.02
+        },
+        "3020060000": {
+          "expected": 63.0,
+          "observed": 67,
+          "deviation_pct_points": 0.01
+        },
+        "3020061000": {
+          "expected": 31.5,
+          "observed": 35,
+          "deviation_pct_points": 0.01
+        }
+      }
+    },
+    {
+      "percentage": 100,
+      "n_sampled": 46480,
+      "chi2_statistic": 0.0,
+      "degrees_of_freedom": 62,
+      "max_deviation_pct_points": 0,
+      "max_deviation_dong": null,
+      "per_dong": {
+        "10100": {
+          "expected": 1628.0,
+          "observed": 1628,
+          "deviation_pct_points": 0.0
+        },
+        "10200": {
+          "expected": 600.0,
+          "observed": 600,
+          "deviation_pct_points": 0.0
+        },
+        "10300": {
+          "expected": 1312.0,
+          "observed": 1312,
+          "deviation_pct_points": 0.0
+        },
+        "10400": {
+          "expected": 791.0,
+          "observed": 791,
+          "deviation_pct_points": 0.0
+        },
+        "10500": {
+          "expected": 553.0,
+          "observed": 553,
+          "deviation_pct_points": 0.0
+        },
+        "10600": {
+          "expected": 674.0,
+          "observed": 674,
+          "deviation_pct_points": 0.0
+        },
+        "10700": {
+          "expected": 782.0,
+          "observed": 782,
+          "deviation_pct_points": 0.0
+        },
+        "10800": {
+          "expected": 521.0,
+          "observed": 521,
+          "deviation_pct_points": 0.0
+        },
+        "10900": {
+          "expected": 470.0,
+          "observed": 470,
+          "deviation_pct_points": 0.0
+        },
+        "11000": {
+          "expected": 621.0,
+          "observed": 621,
+          "deviation_pct_points": 0.0
+        },
+        "11100": {
+          "expected": 2109.0,
+          "observed": 2109,
+          "deviation_pct_points": 0.0
+        },
+        "11200": {
+          "expected": 2749.0,
+          "observed": 2749,
+          "deviation_pct_points": 0.0
+        },
+        "11300": {
+          "expected": 975.0,
+          "observed": 975,
+          "deviation_pct_points": 0.0
+        },
+        "11400": {
+          "expected": 1089.0,
+          "observed": 1089,
+          "deviation_pct_points": 0.0
+        },
+        "11500": {
+          "expected": 927.0,
+          "observed": 927,
+          "deviation_pct_points": 0.0
+        },
+        "11600": {
+          "expected": 949.0,
+          "observed": 949,
+          "deviation_pct_points": 0.0
+        },
+        "11700": {
+          "expected": 2111.0,
+          "observed": 2111,
+          "deviation_pct_points": 0.0
+        },
+        "11800": {
+          "expected": 465.0,
+          "observed": 465,
+          "deviation_pct_points": 0.0
+        },
+        "11900": {
+          "expected": 1281.0,
+          "observed": 1281,
+          "deviation_pct_points": 0.0
+        },
+        "12000": {
+          "expected": 2245.0,
+          "observed": 2245,
+          "deviation_pct_points": 0.0
+        },
+        "12100": {
+          "expected": 1094.0,
+          "observed": 1094,
+          "deviation_pct_points": 0.0
+        },
+        "12200": {
+          "expected": 1462.0,
+          "observed": 1462,
+          "deviation_pct_points": 0.0
+        },
+        "12300": {
+          "expected": 740.0,
+          "observed": 740,
+          "deviation_pct_points": 0.0
+        },
+        "12400": {
+          "expected": 370.0,
+          "observed": 370,
+          "deviation_pct_points": 0.0
+        },
+        "12500": {
+          "expected": 1194.0,
+          "observed": 1194,
+          "deviation_pct_points": 0.0
+        },
+        "12600": {
+          "expected": 314.0,
+          "observed": 314,
+          "deviation_pct_points": 0.0
+        },
+        "12700": {
+          "expected": 775.0,
+          "observed": 775,
+          "deviation_pct_points": 0.0
+        },
+        "12800": {
+          "expected": 658.0,
+          "observed": 658,
+          "deviation_pct_points": 0.0
+        },
+        "12900": {
+          "expected": 49.0,
+          "observed": 49,
+          "deviation_pct_points": 0.0
+        },
+        "13000": {
+          "expected": 460.0,
+          "observed": 460,
+          "deviation_pct_points": 0.0
+        },
+        "13100": {
+          "expected": 24.0,
+          "observed": 24,
+          "deviation_pct_points": 0.0
+        },
+        "13200": {
+          "expected": 837.0,
+          "observed": 837,
+          "deviation_pct_points": 0.0
+        },
+        "13400": {
+          "expected": 149.0,
+          "observed": 149,
+          "deviation_pct_points": 0.0
+        },
+        "13700": {
+          "expected": 431.0,
+          "observed": 431,
+          "deviation_pct_points": 0.0
+        },
+        "13800": {
+          "expected": 523.0,
+          "observed": 523,
+          "deviation_pct_points": 0.0
+        },
+        "13900": {
+          "expected": 933.0,
+          "observed": 933,
+          "deviation_pct_points": 0.0
+        },
+        "14000": {
+          "expected": 794.0,
+          "observed": 794,
+          "deviation_pct_points": 0.0
+        },
+        "14100": {
+          "expected": 1734.0,
+          "observed": 1734,
+          "deviation_pct_points": 0.0
+        },
+        "14200": {
+          "expected": 562.0,
+          "observed": 562,
+          "deviation_pct_points": 0.0
+        },
+        "14300": {
+          "expected": 1385.0,
+          "observed": 1385,
+          "deviation_pct_points": 0.0
+        },
+        "14400": {
+          "expected": 815.0,
+          "observed": 815,
+          "deviation_pct_points": 0.0
+        },
+        "14500": {
+          "expected": 1181.0,
+          "observed": 1181,
+          "deviation_pct_points": 0.0
+        },
+        "14600": {
+          "expected": 1934.0,
+          "observed": 1934,
+          "deviation_pct_points": 0.0
+        },
+        "14700": {
+          "expected": 907.0,
+          "observed": 907,
+          "deviation_pct_points": 0.0
+        },
+        "14800": {
+          "expected": 41.0,
+          "observed": 41,
+          "deviation_pct_points": 0.0
+        },
+        "14900": {
+          "expected": 544.0,
+          "observed": 544,
+          "deviation_pct_points": 0.0
+        },
+        "15000": {
+          "expected": 282.0,
+          "observed": 282,
+          "deviation_pct_points": 0.0
+        },
+        "15100": {
+          "expected": 166.0,
+          "observed": 166,
+          "deviation_pct_points": 0.0
+        },
+        "15200": {
+          "expected": 290.0,
+          "observed": 290,
+          "deviation_pct_points": 0.0
+        },
+        "15300": {
+          "expected": 174.0,
+          "observed": 174,
+          "deviation_pct_points": 0.0
+        },
+        "3020052000": {
+          "expected": 859.0,
+          "observed": 859,
+          "deviation_pct_points": 0.0
+        },
+        "3020052600": {
+          "expected": 209.0,
+          "observed": 209,
+          "deviation_pct_points": 0.0
+        },
+        "3020052700": {
+          "expected": 84.0,
+          "observed": 84,
+          "deviation_pct_points": 0.0
+        },
+        "3020053000": {
+          "expected": 285.0,
+          "observed": 285,
+          "deviation_pct_points": 0.0
+        },
+        "3020054000": {
+          "expected": 224.0,
+          "observed": 224,
+          "deviation_pct_points": 0.0
+        },
+        "3020054600": {
+          "expected": 86.0,
+          "observed": 86,
+          "deviation_pct_points": 0.0
+        },
+        "3020054700": {
+          "expected": 190.0,
+          "observed": 190,
+          "deviation_pct_points": 0.0
+        },
+        "3020054800": {
+          "expected": 65.0,
+          "observed": 65,
+          "deviation_pct_points": 0.0
+        },
+        "3020055000": {
+          "expected": 164.0,
+          "observed": 164,
+          "deviation_pct_points": 0.0
+        },
+        "3020057000": {
+          "expected": 243.0,
+          "observed": 243,
+          "deviation_pct_points": 0.0
+        },
+        "3020058000": {
+          "expected": 271.0,
+          "observed": 271,
+          "deviation_pct_points": 0.0
+        },
+        "3020060000": {
+          "expected": 84.0,
+          "observed": 84,
+          "deviation_pct_points": 0.0
+        },
+        "3020061000": {
+          "expected": 42.0,
+          "observed": 42,
+          "deviation_pct_points": 0.0
+        }
+      }
+    }
+  ],
+  "has_significant_bias": false,
+  "recommendation": "Prefix sampling preserves dong distribution within ±5pp. Existing scalability results are spatially representative."
+}
