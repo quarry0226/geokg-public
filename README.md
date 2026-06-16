@@ -214,39 +214,6 @@ Every script writes incrementally into `backend/experiments/results/`, so re-run
 
 ---
 
-## GSID identifier service
-
-Every node carries a 36-character canonical identifier under the KAIST CRC **GSID v7.0** specification:
-
-```
-{DOMAIN:2}-{SPATIAL:8}-{ELEV:2}-{GEN:2}-{SEQ:6}-{CHK:1}
-e.g.  BL-89C259AB-G0-00-000001-7
-```
-
-The derivation algorithm (S2 cell tokenisation, Luhn mod-36 checksum, per-domain sequence allocation) is provided by an external service and is **not redistributed** with this release. The repository instead ships an **interface-compatible stub** at `backend/geokg/gsid.py` that returns deterministic UUID5-based synthetic identifiers of the same canonical character length.
-
-The framework's rule engine, analysis API, and all reported case-study results work end-to-end with the stub because no analysis function inspects GSID internals — identifiers are used purely as opaque entity handles for graph indexing and cross-table joins. To use the canonical KAIST CRC format in production, replace `backend/geokg/gsid.py` with the upstream implementation; the public function surface (`generate_gsid_for_entity`, `resolve_subtype`, `reset_seq_counters`, etc.) is preserved.
-
----
-
-## Citation
-
-If you use this software, please cite:
-
-```bibtex
-@article{lee2026geokg,
-  title={A Declarative Geographic Knowledge Graph Framework for District-Scale Urban Infrastructure Analysis},
-  author={Lee, Chae-Seok and Park, Dae-seung and Choi, Jae-min and Chang, Ho-jong},
-  journal={IEEE Access},
-  year={2026},
-  doi={10.1109/ACCESS.2026.XXXXXXX}
-}
-```
-
-See [CITATION.cff](CITATION.cff) for structured metadata.
-
----
-
 ## License
 
 MIT (see [LICENSE](LICENSE)). The Korean government open datasets referenced in this work follow their respective public-data terms; see [docs/DATA_DOWNLOAD.md](docs/DATA_DOWNLOAD.md).
